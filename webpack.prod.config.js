@@ -13,7 +13,7 @@ module.exports = {
 
     context: projectRootPath,
 
-    entry: ['./src/app'],
+    entry: ['./src/index'],
 
     output: {
         path: path.resolve('./build/'),
