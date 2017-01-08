@@ -1,2 +1,3 @@
-export {default as App} from './containers/AppContainer';
-export {default as ChatBoxContainer} from './containers/ChatBoxContainer';
+// export {default as app} from './containers/app-container';
+export {default as app} from './views/app/app';
+export {default as about} from './containers/about-container';
