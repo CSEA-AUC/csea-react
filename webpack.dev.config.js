@@ -2,6 +2,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var host = (process.env.HOST || 'localhost');
+var port = (+process.env.PORT + 1) || 8080;
 
 //the base directory (absolute path) for resolving the entry option
 var projectRootPath = __dirname;
@@ -18,7 +20,8 @@ module.exports = {
 
     output: {
         path: path.resolve('./build/'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "/"
     },
 
     module: {
@@ -43,6 +46,7 @@ module.exports = {
             {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream"},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml"},
+            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
 
