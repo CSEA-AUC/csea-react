@@ -1,3 +1,5 @@
+@import '../variables';
+
 $navbar-height: 50px;
 
 :global(html), :global(body), :global(.appWrapper), :global(#root) {
@@ -10,8 +12,17 @@ $navbar-height: 50px;
 
 .banner {
   text-align: center;
-  background: green;
   padding-top: $navbar-height + 1px;
+  background: $dark-blue url("./banner-bg.jpg")  no-repeat center 0;
+  background-size: cover;
+  background-blend-mode: luminosity;
+
+  .logo {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    bottom: -40px;
+  }
 }
 
 .navbar {
@@ -21,13 +32,7 @@ $navbar-height: 50px;
   height: $navbar-height;
 }
 
-.logo {
-  height: 200px;
-  width: 200px;
-  position: relative;
-  bottom: -40px;
-}
 
 .mainWrapper {
-
+  padding-top: 35px;
 }
