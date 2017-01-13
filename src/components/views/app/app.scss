@@ -1,3 +1,33 @@
-// Needed to make react-toolbox styling work correctly
-// https://github.com/react-toolbox/react-toolbox/issues/121#issuecomment-233202018
-@import "~react-toolbox/lib/commons";
+$navbar-height: 50px;
+
+:global(html), :global(body), :global(.appWrapper), :global(#root) {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.banner {
+  text-align: center;
+  background: green;
+  padding-top: $navbar-height + 1px;
+}
+
+.navbar {
+  background: transparent;
+  width: 100%;
+  margin: 0;
+  height: $navbar-height;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  bottom: -40px;
+}
+
+.mainWrapper {
+
+}

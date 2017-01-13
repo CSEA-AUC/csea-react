@@ -1,12 +1,48 @@
 import React, {Component, PropTypes} from 'react'
-import AppBar from 'react-toolbox/lib/app_bar';
-import Navigation from 'react-toolbox/lib/navigation';
-import style from './app.scss';
+import {Nav, NavItem, Navbar, Image, Grid, Row, Col} from 'react-bootstrap'
+
+import styles from './app.scss';
+import logo from './csealogo.png'
 
 export default class App extends Component {
     render() {
-        return(
-            <AppBar title="CSEA" leftIcon="menu"/>
+        return (
+            <div className="appWrapper">
+                <Navbar fixedTop fluid collapseOnSelect inverse className={styles.navbar}>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#">CSEA</a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle/>
+                    </Navbar.Header>
+                    <Navbar.Collapse>
+                        <Nav>
+                            <NavItem eventKey={1} href="#">Link</NavItem>
+                            <NavItem eventKey={2} href="#">Link</NavItem>
+                        </Nav>
+                        <Nav pullRight>
+                            <NavItem eventKey={1} href="#">Link Right</NavItem>
+                            <NavItem eventKey={2} href="#">Link Right</NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+                <section className={"container-fluid " + styles.banner}>
+                    <header>
+                        <h4>The American University in Cairo's</h4>
+                        <h2>Computer Science and Engineering Association</h2>
+                    </header>
+                    <Image className={styles.logo} src={logo} circle/>
+                </section>
+                <section className={styles.mainWrapper}>
+                    <Grid>
+                        <Row>
+                            <Col className={styles.main} md={6} mdOffset={3}>
+                                {this.props.children}
+                            </Col>
+                        </Row>
+                    </Grid>
+                </section>
+            </div>
         )
     }
 }
