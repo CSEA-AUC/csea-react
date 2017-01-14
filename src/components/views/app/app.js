@@ -16,10 +16,6 @@ export default class App extends Component {
                         <Navbar.Toggle/>
                     </Navbar.Header>
                     <Navbar.Collapse>
-                        <Nav>
-                            <NavItem eventKey={1} href="#">Link</NavItem>
-                            <NavItem eventKey={2} href="#">Link</NavItem>
-                        </Nav>
                         <Nav pullRight>
                             <NavItem eventKey={1} href="#">Link Right</NavItem>
                             <NavItem eventKey={2} href="#">Link Right</NavItem>
@@ -34,7 +30,7 @@ export default class App extends Component {
                     <Image className={styles.logo} src={logo} circle/>
                 </section>
                 <section className={styles.mainWrapper}>
-                    <Grid>
+                    <Grid fluid>
                         <Row>
                             <Col className={styles.main} md={6} mdOffset={3}>
                                 {this.props.children}

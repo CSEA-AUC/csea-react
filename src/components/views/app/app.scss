@@ -12,16 +12,30 @@ $navbar-height: 50px;
 
 .banner {
   text-align: center;
+  color: #EEE;
   padding-top: $navbar-height + 1px;
-  background: $dark-blue url("./banner-bg.jpg")  no-repeat center 0;
+  //background: $dark-blue url("./banner-bg.jpg")  no-repeat center 0;
+  background: $dark-blue no-repeat center 0;
   background-size: cover;
   background-blend-mode: luminosity;
-
+  header {
+    margin: 30px 0;
+    h2 {
+      font-weight: 600;
+      margin: 2px;
+    }
+    h4 {
+      font-weight: 400;
+      margin: 4px;
+    }
+  }
   .logo {
+    $bottom-pos: -40px;
     height: 200px;
     width: 200px;
     position: relative;
-    bottom: -40px;
+    bottom: $bottom-pos;
+    margin-top: $bottom-pos;    // Used to prevent relatively position image from taking up unnecessary space
   }
 }
 
@@ -30,9 +44,22 @@ $navbar-height: 50px;
   width: 100%;
   margin: 0;
   height: $navbar-height;
+  border: none;
+  letter-spacing: 0.07em;
+  color: #EEE;
+  text-transform: uppercase;
+  //box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+  :global(.navbar-nav)>li>a {
+    color: #EEE;
+    font-weight: 600;
+    &:hover {
+      color: $green;
+    }
+  }
 }
 
 
 .mainWrapper {
   padding-top: 35px;
+  //background: url(./ignasi_pattern_s.png) repeat;
 }
