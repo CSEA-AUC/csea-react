@@ -10,17 +10,35 @@ $navbar-height: 50px;
   margin: 0;
 }
 
+.navbar {
+  background: transparent;
+  width: 100%;
+  margin: 0;
+  height: $navbar-height;
+  border: none;
+  letter-spacing: 0.07em;
+  color: #EEE;
+  text-transform: uppercase;
+  :global(.navbar-nav) > li > a {
+    color: #EEE;
+    font-weight: 600;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
 .banner {
   text-align: center;
   color: #EEE;
   padding-top: $navbar-height + 1px;
-  //background: $dark-blue url("./banner-bg.jpg")  no-repeat center 0;
-  background: $dark-blue no-repeat center 0;
+  background: url("./banner.jpg")  no-repeat center 0;
+  //background: $dark-blue no-repeat center 0;
   background-size: cover;
   background-blend-mode: luminosity;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .12), 1px 2px 5px rgba(0, 0, 0, .4);
   border-bottom: 3px solid darken($dark-blue, 30%);
-
+  box-shadow: $global-box-shadow;
   header {
     margin: 30px 0;
     h2 {
@@ -34,12 +52,17 @@ $navbar-height: 50px;
   }
   .logoWrapper {
     $bottom-pos: -40px;
+
     display:inline-block;
     height: 200px;
     width: 200px;
     position: relative;
     bottom: $bottom-pos;
     margin-top: $bottom-pos; // Used to prevent relatively position image from taking up unnecessary space
+
+    .CSEALogo {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+    }
 
     //&:before {
     //  content: '';
@@ -62,33 +85,11 @@ $navbar-height: 50px;
     //  }
     //}
 
-    .CSEALogo {
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
-    }
 
-  }
-}
-
-.navbar {
-  background: transparent;
-  width: 100%;
-  margin: 0;
-  height: $navbar-height;
-  border: none;
-  letter-spacing: 0.07em;
-  color: #EEE;
-  text-transform: uppercase;
-  //box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
-  :global(.navbar-nav) > li > a {
-    color: #EEE;
-    font-weight: 600;
-    &:hover {
-      color: $green;
-    }
   }
 }
 
 .mainWrapper {
   padding-top: 35px;
-  //background: url(./ignasi_pattern_s.png) repeat;
+  background: url('./greyzz.png') repeat;
 }

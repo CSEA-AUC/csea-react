@@ -24,7 +24,7 @@ export default class App extends Component {
                 </Navbar>
                 <section className={"container-fluid " + styles.banner}>
                     <header>
-                        <h4>The American University in Cairo's</h4>
+                        <h4>The American University In Cairo's</h4>
                         <h2>Computer Science and Engineering Association</h2>
                     </header>
                     <div className={styles.logoWrapper}>
@@ -34,7 +34,7 @@ export default class App extends Component {
                 <section className={styles.mainWrapper}>
                     <Grid fluid>
                         <Row>
-                            <Col className={styles.main} md={6} mdOffset={3}>
+                            <Col className={styles.main} md={8} mdOffset={2}>
                                 {this.props.children}
                             </Col>
                         </Row>
