@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {Nav, NavItem, Navbar, Image, Grid, Row, Col} from 'react-bootstrap'
 
 import styles from './app.scss';
-import logo from './csealogo.png'
+import logo from './whitelogo.png'
 
 export default class App extends Component {
     render() {
