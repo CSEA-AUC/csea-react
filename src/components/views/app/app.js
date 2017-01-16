@@ -27,7 +27,9 @@ export default class App extends Component {
                         <h4>The American University in Cairo's</h4>
                         <h2>Computer Science and Engineering Association</h2>
                     </header>
-                    <Image className={styles.logo} src={logo} circle/>
+                    <div className={styles.logoWrapper}>
+                        <Image className={styles.CSEALogo} src={logo} circle responsive/>
+                    </div>
                 </section>
                 <section className={styles.mainWrapper}>
                     <Grid fluid>

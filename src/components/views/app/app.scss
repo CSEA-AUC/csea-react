@@ -18,6 +18,9 @@ $navbar-height: 50px;
   background: $dark-blue no-repeat center 0;
   background-size: cover;
   background-blend-mode: luminosity;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .12), 1px 2px 5px rgba(0, 0, 0, .4);
+  border-bottom: 3px solid darken($dark-blue, 30%);
+
   header {
     margin: 30px 0;
     h2 {
@@ -29,13 +32,40 @@ $navbar-height: 50px;
       margin: 4px;
     }
   }
-  .logo {
+  .logoWrapper {
     $bottom-pos: -40px;
+    display:inline-block;
     height: 200px;
     width: 200px;
     position: relative;
     bottom: $bottom-pos;
-    margin-top: $bottom-pos;    // Used to prevent relatively position image from taking up unnecessary space
+    margin-top: $bottom-pos; // Used to prevent relatively position image from taking up unnecessary space
+
+    //&:before {
+    //  content: '';
+    //  position: absolute;
+    //  left: 0;
+    //  width: 200px;
+    //  height: 200px;
+    //  background-color: $green;
+    //  opacity: .75;
+    //  border-radius: 100%;
+    //  animation: scaleout 1.5s infinite ease-in-out;
+    //  @keyframes scaleout {
+    //    0% {
+    //      transform: scale(1)
+    //    }
+    //    to {
+    //      transform: scale(1.5);
+    //      opacity: 0
+    //    }
+    //  }
+    //}
+
+    .CSEALogo {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+    }
+
   }
 }
 
@@ -49,7 +79,7 @@ $navbar-height: 50px;
   color: #EEE;
   text-transform: uppercase;
   //box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
-  :global(.navbar-nav)>li>a {
+  :global(.navbar-nav) > li > a {
     color: #EEE;
     font-weight: 600;
     &:hover {
@@ -57,7 +87,6 @@ $navbar-height: 50px;
     }
   }
 }
-
 
 .mainWrapper {
   padding-top: 35px;
