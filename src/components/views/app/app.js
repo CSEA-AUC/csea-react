@@ -7,29 +7,33 @@ import logo from './csealogo.png'
 
 export default class App extends Component {
     render() {
-        const article = (<article className={styles.post}>
-            <header>
-                <h2 className={styles.title}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h2>
-                <h5 className={styles.subtitle}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h5>
-            </header>
-            <span>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at vestibulum nunc.
-                                        Proin tincidunt ex sapien, maximus tristique ligula finibus sit amet. Quisque eu massa mollis, egestas ipsum vel, molestie magna.
-                                        Donec porttitor ac turpis non pharetra. Duis vitae interdum orci. Morbi nisl tellus, aliquam vel lobortis id, maximus at purus.
-                                        Nam rutrum leo lectus, vel dictum velit luctus quis. Donec id eleifend risus. Aliquam erat volutpat. Maecenas ac nibh diam. In non cursus felis.
-                                    </span>
-            <footer className={styles.postMeta}>
-                <span className={styles.postAuthor}>CSEA Admin</span>
-                <span className={styles.postDate}> 15 SEPTEMBER 2015</span>
-                <span className={styles.postCommentCount}>5 Comments</span>
-                <span className={styles.postContinueReading}>Continue Reading</span>
-            </footer>
-        </article>);
+        const article = (
+            <article className={styles.post}>
+                <header>
+                    <h2 className={styles.title}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </h2>
+                    <h5 className={styles.subtitle}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </h5>
+                </header>
+                <div className={styles.snippet}>
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at vestibulum nunc.
+                        Proin tincidunt ex sapien, maximus tristique ligula finibus sit amet. Quisque eu massa mollis, egestas ipsum vel, molestie magna.
+                        Donec porttitor ac turpis non pharetra. Duis vitae interdum orci. Morbi nisl tellus, aliquam vel lobortis id, maximus at purus.
+                        Nam rutrum leo lectus, vel dictum velit luctus quis. Donec id eleifend risus. Aliquam erat volutpat. Maecenas ac nibh diam. In non cursus felis.
+                    </span>
+                </div>
+                <footer>
+                    <span className={styles.postAuthor}>CSEA Admin</span>
+                    <span className={styles.postDate}>15 SEPTEMBER 2015</span>
+                    <span className={styles.postCommentCount}>5 Comments</span>
+                    <span className={styles.postContinueReading}>Continue Reading</span>
+                </footer>
+            </article>
+        );
 
         return (
             <div className="appWrapper">
@@ -47,6 +51,7 @@ export default class App extends Component {
                     <Grid fluid>
                         <Row>
                             <Col className={styles.main} md={6} mdOffset={3}>
+                                <h2>Latest Announcements</h2>
                                 {article}
                                 {article}
                                 {article}

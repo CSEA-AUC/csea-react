@@ -11,6 +11,7 @@
 .what {
   background: green;
 }
+
 .banner {
   text-align: center;
   color: #EEE;
@@ -36,7 +37,7 @@
   .logoWrapper {
     $bottom-pos: -40px;
 
-    display:inline-block;
+    display: inline-block;
     height: 200px;
     width: 200px;
     position: relative;
@@ -72,7 +73,6 @@
     //  }
     //}
 
-
   }
 }
 
@@ -80,4 +80,59 @@
   padding-top: 35px;
   background: #EEE;
   font-size: 16px;
+}
+
+.post {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  color: $black;
+  box-shadow: $global-box-shadow;
+  header {
+    margin-bottom: 15px;
+    .title {
+      font-weight: 500;
+      margin: 0 0 7px;
+    }
+    .subtitle {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      color: lighten($black, 30%);
+    }
+  }
+
+  .snippet {
+    margin: 10px 0;
+    font-family: 'Vollkorn', serif;
+  }
+
+  footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid lighten($black, 70%);
+    display: flex;
+    color: darken($green, 15%);
+    flex-wrap: wrap;
+    align-content: space-between;
+
+    & > * {
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+
+    .postAuthor {
+    }
+    .postDate {
+
+    }
+    .postCommentCount {
+
+    }
+    .postContinueReading {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
 }
