@@ -1,0 +1,16 @@
+$navbar-height: 50px;
+
+$dark-blue: #003459 !default;
+$light-blue: #84C3DF !default;
+$green: #4cbed2 !default;
+$black : #222 !default;
+
+$global-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2) !default;
+
+:global(html), :global(body), :global(.appWrapper), :global(#root) {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}

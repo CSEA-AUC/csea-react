@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {Image, Grid, Row, Col} from 'react-bootstrap'
 
-import CSEANavbar from '../includes/navbar/csea-navbar'
+import CSEANavbar from '../includes/csea-navbar/csea-navbar'
 import styles from './app.scss';
 import logo from './csealogo.png'
 
