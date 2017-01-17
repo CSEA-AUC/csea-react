@@ -6,7 +6,8 @@ import styles from './csea-navbar.scss';
 export default class CSEANavbar extends Component {
     render() {
         return (
-            <Navbar fixedTop fluid collapseOnSelect inverse className={styles.navbar +' '+ this.props.className}>
+            <Navbar fixedTop={this.props.fixedTop} fluid collapseOnSelect inverse style={this.props.style}
+                    className={styles.navbar + ' ' + this.props.className}>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <a href="#">CSEA</a>
