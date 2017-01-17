@@ -1,7 +1,5 @@
 @import '../variables';
 
-$navbar-height: 50px;
-
 :global(html), :global(body), :global(.appWrapper), :global(#root) {
   height: 100%;
   width: 100%;
@@ -11,24 +9,9 @@ $navbar-height: 50px;
   font-family: 'Exo 2', sans-serif;
 }
 
-.navbar {
-  background: transparent;
-  width: 100%;
-  margin: 0;
-  height: $navbar-height;
-  border: none;
-  letter-spacing: 0.07em;
-  color: #EEE;
-  text-transform: uppercase;
-  :global(.navbar-nav) > li > a {
-    color: #EEE;
-    font-weight: 600;
-    &:hover {
-      color: $green;
-    }
-  }
+.what {
+  background: green;
 }
-
 .banner {
   text-align: center;
   color: #EEE;
@@ -96,4 +79,5 @@ $navbar-height: 50px;
 
 .mainWrapper {
   padding-top: 35px;
+  background: #EEE;
 }

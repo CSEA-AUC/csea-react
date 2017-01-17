@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.navbar {
+  background: transparent;
+  width: 100%;
+  margin: 0;
+  height: $navbar-height;
+  border: none;
+  letter-spacing: 0.07em;
+  color: #EEE;
+  text-transform: uppercase;
+  :global(.navbar-nav) > li > a {
+    color: #EEE;
+    font-weight: 600;
+    &:hover {
+      color: $green;
+    }
+  }
+}

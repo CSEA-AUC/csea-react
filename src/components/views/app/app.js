@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
-import {Nav, NavItem, Navbar, Image, Grid, Row, Col} from 'react-bootstrap'
+import {Image, Grid, Row, Col} from 'react-bootstrap'
 
+import CSEANavbar from '../includes/navbar/csea-navbar'
 import styles from './app.scss';
 import logo from './csealogo.png'
 
@@ -8,20 +9,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="appWrapper">
-                <Navbar fixedTop fluid collapseOnSelect inverse className={styles.navbar}>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                            <a href="#">CSEA</a>
-                        </Navbar.Brand>
-                        <Navbar.Toggle/>
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Nav pullRight>
-                            <NavItem eventKey={1} href="#">Link Right</NavItem>
-                            <NavItem eventKey={2} href="#">Link Right</NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+                <CSEANavbar/>
                 <section className={"container-fluid " + styles.banner}>
                     <header>
                         <h4>The American University In Cairo's</h4>
@@ -40,6 +28,9 @@ export default class App extends Component {
                         </Row>
                     </Grid>
                 </section>
+                <footer>
+
+                </footer>
             </div>
         )
     }
