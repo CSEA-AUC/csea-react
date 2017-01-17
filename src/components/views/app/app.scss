@@ -39,6 +39,7 @@ $navbar-height: 50px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .12), 1px 2px 5px rgba(0, 0, 0, .4);
   border-bottom: 3px solid darken($green, 10%);
   box-shadow: $global-box-shadow;
+
   header {
     margin: 30px 0;
     h2 {
@@ -59,6 +60,7 @@ $navbar-height: 50px;
     position: relative;
     bottom: $bottom-pos;
     margin-top: $bottom-pos; // Used to prevent relatively position image from taking up unnecessary space
+    z-index: 0;
 
     .CSEALogo {
       background: #333;
@@ -69,12 +71,14 @@ $navbar-height: 50px;
     //  content: '';
     //  position: absolute;
     //  left: 0;
+    //  top: 0;
     //  width: 200px;
     //  height: 200px;
     //  background-color: $green;
     //  opacity: .75;
     //  border-radius: 100%;
     //  animation: scaleout 1.5s infinite ease-in-out;
+    //  z-index: -1;
     //  @keyframes scaleout {
     //    0% {
     //      transform: scale(1)
