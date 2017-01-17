@@ -6,4 +6,38 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
+  padding-top: $navbar-height + 1px;
+  padding-bottom: 40px;
+  border-bottom: 3px solid darken($green, 10%);
+  color: #EEE;
+  background: $green url('./footer_lodyas.png') repeat;
+  background-blend-mode: luminosity;
+  min-height: 35vh;
+
+  header {
+    text-shadow: rgba(0, 0, 0, 0.3) 1px 2px 1px, rgba(0, 0, 0, 0.4) 1px 2px 3px;
+    .title {
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 3.5em;
+    }
+    .divider {
+      max-width: 100px;
+      margin: 15px auto;
+      border-width: 4px;
+      border-color: inherit;
+      border-radius: 3px;
+    }
+    .subtitle {
+      font-weight: 300;
+      margin: 10px 0 0;
+    }
+  }
+}
+
+.mainWrapper {
+  padding-top: 15px;
+  background: #EEE;
 }

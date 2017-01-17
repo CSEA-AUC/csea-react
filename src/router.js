@@ -7,7 +7,8 @@ export default (
     <Router history={hashHistory}>
         <Route path="/">
             <IndexRoute component={app}/>
-            <Route path="page" component={page}/>
+            <Route path="about" component={about}/>
+            {/*<Route path="*" status={404}/>*/}
         </Route>
     </Router>
 )
