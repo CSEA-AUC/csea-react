@@ -9,7 +9,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="appWrapper">
-                <CSEANavbar fixedTop/>
+                <CSEANavbar fixedTop fluid collapseOnSelect inverse/>
                 <section className={"container-fluid " + styles.banner}>
                     <header>
                         <h4>The American University In Cairo's</h4>
