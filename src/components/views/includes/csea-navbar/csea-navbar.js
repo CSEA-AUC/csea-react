@@ -18,7 +18,7 @@ export default class CSEANavbar extends Component {
                 <Navbar.Collapse>
                     <Nav pullRight>
                         <LinkContainer to={'/about'}><NavItem eventKey={1}>About</NavItem></LinkContainer>
-                        <NavItem eventKey={2} href="#">Link Right</NavItem>
+                        <LinkContainer to={'/announcements'}><NavItem eventKey={2} href="#">Announcements</NavItem></LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

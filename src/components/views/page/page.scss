@@ -8,13 +8,19 @@
   align-items: center;
 
   text-align: center;
+
   padding-top: $navbar-height + 1px;
   padding-bottom: 40px;
-  border-bottom: 3px solid darken($green, 10%);
+
   color: #EEE;
-  background: $green url('./footer_lodyas.png') repeat;
-  background-blend-mode: luminosity;
+
   min-height: 35vh;
+
+  background-image: url('./banner_pattern.png');
+  background-repeat: repeat;
+
+  border-bottom: 3px solid darken($green, 10%);
+
 
   header {
     text-shadow: rgba(0, 0, 0, 0.3) 1px 2px 1px, rgba(0, 0, 0, 0.4) 1px 2px 3px;
