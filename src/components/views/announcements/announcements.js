@@ -12,5 +12,4 @@ export default class Announcements extends Component {
             </Page>
         )
     }
-
 }
