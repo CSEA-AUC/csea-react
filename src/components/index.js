@@ -3,4 +3,5 @@ export {default as app} from './views/app/app';
 export {default as about} from './views/about/about';
 export {default as page} from './views/page/page';
 export {default as announcements} from './views/announcements/announcements'
+export {default as ListPosts} from './views/announcements/list-posts/list-posts'
 // export {default as about} from './containers/about-contain';
