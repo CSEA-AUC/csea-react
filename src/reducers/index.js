@@ -24,7 +24,11 @@ function postListReducer(state = initialState.postList, action) {
     return state;
 }
 
+function postReducer(state=initialState.currentPost, action) {
+    return state;
+}
+
 export default combineReducers({
-    blogState: postListReducer,
+    blogState: {postListReducer, postReducer},
     routing: routerReducer
 })

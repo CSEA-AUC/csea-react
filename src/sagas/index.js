@@ -1,5 +1,5 @@
 import {take, put, call, fork, select} from 'redux-saga/effects'
-import * as actions from '../redux/actions'
+import * as actions from '../actions'
 
 // Subroutines
 
@@ -16,7 +16,7 @@ function* watchLoadPostsList(){
 }
 
 // Root saga
-export default function* root() {
+export default function* rootSaga() {
     yield [
         fork(watchLoadPostsList)
     ]
