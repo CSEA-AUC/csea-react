@@ -1,5 +1,5 @@
 import {createStore} from 'redux'
-import reducers from './modules/reducer'
+import reducers from './reducers'
 
 let store = null;
 
