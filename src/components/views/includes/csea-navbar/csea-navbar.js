@@ -7,7 +7,7 @@ import styles from './csea-navbar.scss';
 export default class CSEANavbar extends Component {
     render() {
         return (
-            <Navbar {...this.props} className={styles.navbar + ' ' + this.props.className}>
+            <Navbar {...this.props} className={styles.navbar + ' ' + (this.props.className || '')}>
                 <Navbar.Header>
                     <Navbar.Brand>
                         {/*Change to IndexLink?*/}

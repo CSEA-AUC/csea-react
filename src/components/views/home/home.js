@@ -5,7 +5,7 @@ import CSEANavbar from '../includes/csea-navbar/csea-navbar'
 import styles from './home.scss';
 import logo from './csealogo.png'
 
-export default class App extends Component {
+export default class Home extends Component {
     render() {
         const article = (
             <article className={styles.post}>
@@ -36,7 +36,7 @@ export default class App extends Component {
         );
 
         return (
-            <div className="appWrapper">
+            <div>
                 <CSEANavbar fixedTop fluid collapseOnSelect inverse/>
                 <section className={"container-fluid " + styles.banner}>
                     <header>

@@ -3,10 +3,12 @@ import {Grid, Row, Col} from 'react-bootstrap'
 
 import styles from './list-posts.scss';
 import {loadPostList}from '../../../../actions/index'
+
 export default class ListPosts extends Component {
     componentWillMount() {
-        loadPostList('what', 5);
+        // dispatch(loadPostList('what', 5));
     }
+
     createPost(post, index) {
         return (
             <article key={index} className={styles.post}>

@@ -6,9 +6,9 @@ import styles from './page.scss';
 export default class Page extends Component {
     render() {
         return (
-            <div className="appWrapper">
+            <div>
                 <CSEANavbar fixedTop fluid collapseOnSelect inverse/>
-                <section className={"container-fluid " + styles.banner + ' ' + this.props.className}>
+                <section className={"container-fluid " + styles.banner + ' ' + (this.props.className || '')}>
                     <header>
                         <h1 className={styles.title}>{this.props.title}</h1>
                         <hr className={styles.divider}/>

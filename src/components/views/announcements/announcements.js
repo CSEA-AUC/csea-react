@@ -13,3 +13,7 @@ export default class Announcements extends Component {
         )
     }
 }
+
+Announcements.propTypes = {
+    children: PropTypes.node.isRequired,
+};
