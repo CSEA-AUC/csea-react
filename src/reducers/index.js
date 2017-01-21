@@ -29,6 +29,6 @@ function postReducer(state=initialState.currentPost, action) {
 }
 
 export default combineReducers({
-    blogState: {postListReducer, postReducer},
+    blogState: combineReducers({postListReducer, postReducer}),
     routing: routerReducer
 })
