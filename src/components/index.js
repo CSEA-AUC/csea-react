@@ -1,5 +1,5 @@
 // export {default as app} from './containers/app-container';
-export {default as app} from './views/app/app';
+export {default as app} from './views/home/home';
 export {default as about} from './views/about/about';
 export {default as page} from './views/page/page';
 export {default as announcements} from './views/announcements/announcements'

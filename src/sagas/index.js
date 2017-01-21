@@ -4,13 +4,14 @@ import * as actions from '../actions'
 // Subroutines
 
 function* loadPostList(url, pageNum) {
+    "use strict";
 
 }
 
 // Watchers
 function* watchLoadPostsList(){
     while(true) {
-        const what = yield take(actions.LOAD_POST_LIST);
+        const what = yield take();
         yield console.log(what);
     }
 }
