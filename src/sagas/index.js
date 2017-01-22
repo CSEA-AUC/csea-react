@@ -9,9 +9,9 @@ function* loadPostList(url, pageNum) {
 }
 
 // Watchers
-function* watchLoadPostsList(){
-    while(true) {
-        const what = yield take();
+function* watchLoadPostsList() {
+    while (true) {
+        const what = yield take(actions.LOAD_POST_LIST);
         yield console.log(what);
     }
 }
@@ -22,4 +22,3 @@ export default function* rootSaga() {
         fork(watchLoadPostsList)
     ]
 }
-

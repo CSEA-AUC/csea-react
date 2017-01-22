@@ -14,9 +14,9 @@ export const post = {
 };
 
 export const postList = {
-    request: (url, pageNum) => action(POST_LIST.REQUEST, {url, pageNum}),
-    success: (url, pageNum, response) => action(POST_LIST.SUCCESS, {url, pageNum, response}),
-    failure: (url, pageNum, error) => action(POST_LIST.failure, {url, pageNum, error})
+    request: (pageNum) => action(POST_LIST.REQUEST, {pageNum}),
+    success: (pageNum, response) => action(POST_LIST.SUCCESS, {pageNum, response}),
+    failure: (pageNum, error) => action(POST_LIST.failure, {pageNum, error})
 };
 
-export const loadPostList = (url, pageNum) => action(LOAD_POST_LIST, {url, pageNum});
+export const loadPostList = (pageNum) => action(LOAD_POST_LIST, {pageNum});
