@@ -2,11 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 import styles from './list-posts.scss';
-import {loadPostList}from '../../../../actions/index'
+import {loadPostList}from '../../actions/index'
 
 export default class ListPosts extends Component {
     componentWillMount() {
-        // dispatch(loadPostList('what', 5));
+
     }
 
     createPost(post, index) {

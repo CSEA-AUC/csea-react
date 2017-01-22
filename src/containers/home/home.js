@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import {Image, Grid, Row, Col} from 'react-bootstrap'
 
-import CSEANavbar from '../includes/csea-navbar/csea-navbar'
 import styles from './home.scss';
 import logo from './csealogo.png'
 
@@ -37,7 +36,6 @@ export default class Home extends Component {
 
         return (
             <div>
-                <CSEANavbar fixedTop fluid collapseOnSelect inverse/>
                 <section className={"container-fluid " + styles.banner}>
                     <header>
                         <h4>The American University In Cairo's</h4>
@@ -59,9 +57,6 @@ export default class Home extends Component {
                         </Row>
                     </Grid>
                 </section>
-                <footer>
-
-                </footer>
             </div>
         )
     }

@@ -7,7 +7,7 @@ import {
     About,
     Announcements,
     ListPosts
-} from './components'
+} from './containers'
 
 export default (
     <Router history={hashHistory}>

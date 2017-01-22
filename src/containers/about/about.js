@@ -1,18 +1,18 @@
 import React, {Component, PropTypes} from 'react'
 
-import Page from '../page/page';
+import {Banner} from '../../components'
 import styles from './about.scss';
 
 export default class About extends Component {
     render() {
         return (
-            <Page title="About us" subtitle="All you need to know about current and past CSEA families!">
-                <header className={styles.pageTitle}>
+            <div>
+                <Banner title="About us" subtitle="All you need to know about current and past CSEA families!"/>
+                <section className={styles.mainWrapper}>
                     <h1>About us</h1>
                     <h3>All you need to know about current and past CSEA families!</h3>
-                </header>
-            </Page>
+                </section>
+            </div>
         )
     }
-
 }

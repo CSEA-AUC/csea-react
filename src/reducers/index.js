@@ -10,7 +10,7 @@ const initialState = {
     currentPost: {}
 };
 
-function postListReducer(state = initialState.postList, action) {
+function postList(state = initialState.postList, action) {
     switch(action.type) {
         case types.POST_LIST.REQUEST:
             return {...state, isFetching: true};
@@ -24,11 +24,11 @@ function postListReducer(state = initialState.postList, action) {
     return state;
 }
 
-function postReducer(state=initialState.currentPost, action) {
+function post(state=initialState.currentPost, action) {
     return state;
 }
 
 export default combineReducers({
-    blogState: combineReducers({postListReducer, postReducer}),
+    blogState: combineReducers({postList, post}),
     routing: routerReducer
 })
