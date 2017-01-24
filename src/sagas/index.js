@@ -9,11 +9,12 @@ import * as api from '../services/api'
 function* loadPostList(action) {
     const {pageNum} = action;
     try {
+        yield put(actions.postList.request(pageNum));
         const apiData = yield call(api.fetchResource, 'blog/posts/');
-        console.log(apiData)
+        yield put(actions.postList.success(pageNum, apiData.data.results, apiData.status));
     }
     catch (error) {
-        // console.log(error.response.data);
+        yield put(actions.postList.failure(pageNum, error.status));
     }
 }
 

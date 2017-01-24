@@ -8,18 +8,23 @@ import {loadPostList}from '../../actions/index'
 
 class ListPosts extends Component {
     componentWillMount() {
-        this.props.loadPostList(1);
+        this.props.loadPostList(this.props.pageNum);
     }
 
     render() {
-        const posts = [1, 2, 3];
+        const posts = this.props.postsLists[this.props.pageNum];
+        const {nextUrl, prevUrl} = this.props;
         return (
             <section className={styles.mainWrapper}>
                 <Grid fluid>
                     <Row>
                         <Col className={styles.main} md={6} mdOffset={3}>
                             <h2>Latest Announcements</h2>
-                            <PostList posts={posts}/>
+                            <PostList
+                                posts={posts}
+                                nextUrl={nextUrl}
+                                prevUrl={prevUrl}
+                            />
                         </Col>
                     </Row>
                 </Grid>
@@ -29,12 +34,16 @@ class ListPosts extends Component {
 }
 
 ListPosts.propTypes = {
-    postList: PropTypes.object.isRequired,
+    postsLists: PropTypes.object.isRequired,
+    pageNum: PropTypes.number.isRequired,
+    nextUrl: PropTypes.string.isRequired,
+    prevUrl: PropTypes.string.isRequired,
     loadPostList: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-    return state.blogState
+    const {nextUrl, prevUrl, pageNum, postsLists} = state.blog;
+    return {postsLists, pageNum, nextUrl, prevUrl}
 }
 
 function mapDispatchToProps(dispatch) {
