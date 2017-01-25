@@ -1,0 +1,41 @@
+@import '../../globals';
+
+
+.spinnerWrapper {
+  height: 150px;
+  width: 150px;
+  content: '';
+  z-index: -1;
+  margin: 40px auto;
+
+  .spinner{
+    background: url('../../../assets/img/csealogo.png');
+    background-size: cover;
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    z-index: 5;
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: $green;
+    opacity: .75;
+    border-radius: 100%;
+    animation: scaleout 1.5s infinite ease-in-out;
+    z-index: 0;
+    @keyframes scaleout {
+      0% {
+        transform: scale(1)
+      }
+      to {
+        transform: scale(1.5);
+        opacity: 0
+      }
+    }
+  }
+}

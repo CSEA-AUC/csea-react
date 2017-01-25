@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {Image, Grid, Row, Col} from 'react-bootstrap'
 
 import styles from './home.scss';
-import logo from './csealogo.png'
+import logo from '../../../assets/img/csealogo.png'
 
 export default class Home extends Component {
     render() {

@@ -4,7 +4,6 @@ import styles from './post-list.scss';
 
 export default class PostList extends Component {
     createPost(post, index) {
-        console.log(post);
         return (
             <article key={post.slug} className={styles.post}>
                 <header>

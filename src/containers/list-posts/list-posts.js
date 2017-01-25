@@ -5,6 +5,7 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import styles from './list-posts.scss';
 import {PostList} from '../../components/';
 import {loadPostList}from '../../actions/index'
+import {Spinner} from '../../components'
 
 class ListPosts extends Component {
     componentWillMount() {
@@ -13,18 +14,23 @@ class ListPosts extends Component {
 
     render() {
         const posts = this.props.postsLists[this.props.pageNum];
+        const isFetching = posts.isFetching || true;
         const {nextUrl, prevUrl} = this.props;
         return (
             <section className={styles.mainWrapper}>
                 <Grid fluid>
                     <Row>
                         <Col className={styles.main} md={6} mdOffset={3}>
-                            <h2>Latest Announcements</h2>
-                            <PostList
-                                posts={posts}
-                                nextUrl={nextUrl}
-                                prevUrl={prevUrl}
-                            />
+                            {isFetching ? <Spinner/> :
+                                <div>
+                                    <h2>Latest Announcements</h2>
+                                    <PostList
+                                        posts={posts}
+                                        nextUrl={nextUrl}
+                                        prevUrl={prevUrl}
+                                    />
+                                </div>
+                            }
                         </Col>
                     </Row>
                 </Grid>

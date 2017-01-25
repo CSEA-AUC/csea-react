@@ -5,7 +5,10 @@ import * as types from '../actions';
 const initialState = {
     postsLists: {
         1: {
-            results: []
+            id: 1,
+            results: [],
+            isFetching: true,
+            responseCode: null
         }
     },
     pageNum: 1,
