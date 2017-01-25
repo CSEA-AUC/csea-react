@@ -3,7 +3,7 @@ import React, {Component, PropTypes} from 'react'
 import styles from './post-list.scss';
 
 export default class PostList extends Component {
-    createPost(post, index) {
+    createPost(post) {
         return (
             <article key={post.slug} className={styles.post}>
                 <header>
@@ -14,9 +14,9 @@ export default class PostList extends Component {
                     <span>{post.content}</span>
                 </div>
                 <footer>
-                    <span className={styles.postAuthor}>{post.user}</span>
+                    <span className={styles.postAuthor}>{post.author}</span>
                     <span className={styles.postDate}>{post.date}</span>
-                    <span className={styles.postCommentCount}>5 Comments {/*post.commentCount*/}</span>
+                    <span className={styles.postCommentCount}>{post.comment_count + ' Comments'}</span>
                     <span className={styles.postContinueReading}>Continue Reading</span>
                 </footer>
             </article>
