@@ -1,9 +1,63 @@
 @import '../../globals';
 
 .mainWrapper {
+  padding-top: 20px;
+  background: #EEE;
 
   .main {
-
+    margin-bottom: 30px;
+    padding: 20px;
+    color: $black;
+    background: white;
+    //box-shadow: $global-box-shadow;
+    border-radius: 5px;
   }
 
+}
+
+.post {
+  header {
+    border-bottom: 2px solid $blog-base-color;
+    .title {
+      margin-top: 0;
+      font-weight: 600;
+      font-size: 2.5em;
+    }
+    .subtitle {
+      color: $grey;
+    }
+  }
+
+  .postMeta {
+    display:inline-block;
+    font-family: 'Quattrocento', serif;
+    font-weight: 600;
+    color: darken(white, 10%);
+    //border-bottom: 2px solid darken($blog-base-color, 25%);
+    //border-left: 2px solid darken($blog-base-color, 25%);
+    //border-right: 2px solid darken($blog-base-color, 25%);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: $blog-base-color;
+    .author {
+      padding-right: 10px;
+      border-right: 1px solid darken(white, 10%);
+    }
+    .timestamp {
+      margin: 0 10px;
+    }
+  }
+
+  .contentWrapper {
+    line-height: 2em;
+    font-family: 'Open Sans', sans-serif;
+    .content {
+      margin-top: 25px;
+      font-size: 18px;
+    }
+    .contentImage {
+      margin: 0 auto;
+    }
+  }
 }

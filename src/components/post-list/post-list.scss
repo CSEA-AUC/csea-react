@@ -17,6 +17,7 @@
       font-weight: 400;
       font-size: 14px;
       color: lighten($black, 30%);
+      font-family: 'Open Sans', sans-serif;
     }
   }
 
@@ -33,7 +34,7 @@
     flex-wrap: wrap;
     align-content: space-between;
 
-    font-family: 'Vollkorn', serif;
+    font-family: 'Quattrocento', serif;
 
     & > * {
       display: inline-block;

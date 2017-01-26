@@ -4,6 +4,7 @@ import {Grid, Row, Col, Image} from 'react-bootstrap'
 
 import {loadPost}from '../../actions/'
 import {Spinner} from '../../components'
+import Markdown from 'react-remarkable'
 
 import styles from './view-post.scss'
 
@@ -26,14 +27,19 @@ class ViewPost extends Component {
                                     <header>
                                         <h2 className={styles.title}>{post.title}</h2>
                                         <h4 className={styles.subtitle}>{post.subtitle}</h4>
-                                        <div className={styles.postMeta}>
-                                            <span className={styles.author}>{post.author}</span>
-                                            <span className={styles.timestamp}>{post.created}</span>
-                                        </div>
                                     </header>
+                                    <div className={styles.postMeta}>
+                                        <span className={styles.author}>{post.author}</span>
+                                        <span className={styles.timestamp}>{post.created}</span>
+                                    </div>
                                     <div className={styles.contentWrapper}>
-                                        <div className={styles.content}>{post.content}</div>
-                                        <Image className={styles.contentImage} src={post.image} responsive/>
+                                        {post.image &&
+                                        <Image className={styles.contentImage} src={post.image} responsive/>}
+                                        <div className={styles.content}>
+                                            <Markdown>
+                                                {post.content}
+                                            </Markdown>
+                                        </div>
                                     </div>
                                 </div>
                             }
