@@ -2,10 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 
-import styles from './list-posts.scss';
-import {PostList} from '../../components/';
-import {loadPostList}from '../../actions/index'
-import {Spinner} from '../../components'
+import {loadPostList}from '../../actions/'
+import {PostList, Spinner} from '../../components/'
+
+import styles from './list-posts.scss'
+
 
 class ListPosts extends Component {
     componentWillMount() {
@@ -13,9 +14,9 @@ class ListPosts extends Component {
     }
 
     render() {
-        const posts = this.props.postsLists[this.props.pageNum];
-        const isFetching = posts.isFetching || true;
+        const postList = this.props.postsLists[this.props.pageNum];
         const {nextUrl, prevUrl} = this.props;
+        const isFetching = postList.isFetching;
         return (
             <section className={styles.mainWrapper}>
                 <Grid fluid>
@@ -25,7 +26,7 @@ class ListPosts extends Component {
                                 <div>
                                     <h2>Latest Announcements</h2>
                                     <PostList
-                                        posts={posts}
+                                        posts={postList}
                                         nextUrl={nextUrl}
                                         prevUrl={prevUrl}
                                     />

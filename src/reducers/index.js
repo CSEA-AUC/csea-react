@@ -14,8 +14,8 @@ const initialState = {
     pageNum: 1,
     nextUrl: '',
     prevUrl: '',
-    postsBySlug: [],
-    selectedPost: '',
+
+    postsBySlug: {}
 };
 
 
@@ -56,11 +56,44 @@ function blog(state = initialState, action) {
             };
             return {...state, postsLists: postsLists};
         }
+
+        case types.POST.REQUEST:
+        case types.POST.SUCCESS:
+        case types.POST.FAILURE:
+            return {...state, postsBySlug: post(state.postsBySlug, action)}
     }
     return state;
 }
 
 function post(state = initialState, action) {
+    switch (action.type) {
+        case types.POST.REQUEST:
+            return {
+                ...state, [action.postSlug]: {
+                    postSlug: action.postSlug,
+                    isFetching: true,
+                    responseCode: null
+                }
+            };
+        case types.POST.SUCCESS:
+            return {
+                ...state, [action.postSlug]: {
+                    postSlug: action.postSlug,
+                    isFetching: false,
+                    responseCode: action.responseCode,
+                    ...action.post
+                }
+            };
+
+        case types.POST.FAILURE:
+            return {
+                ...state, [action.postSlug]: {
+                    postSlug: action.postSlug,
+                    isFetching: false,
+                    responseCode: action.errorCode
+                }
+            }
+    }
     return state;
 }
 

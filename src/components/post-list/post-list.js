@@ -17,7 +17,7 @@ export default class PostList extends Component {
                     <span>{post.content}</span>
                 </div>
                 <footer>
-                    <span className={styles.postAuthor}>{post.author}</span>
+                    <span className={styles.postAuthor}>By {post.author}</span>
                     <span className={styles.postDate}>{post.date}</span>
                     <span className={styles.postCommentCount}>{post.comment_count + ' Comments'}</span>
                     <span className={styles.postContinueReading}>Continue Reading</span>
