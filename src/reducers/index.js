@@ -2,6 +2,7 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import * as types from '../actions';
 
+// TODO: Remove nextUrl and prevUrl, keep track of only pageNum
 const initialState = {
     postsLists: {
         1: {
