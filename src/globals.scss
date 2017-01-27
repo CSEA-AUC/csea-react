@@ -16,11 +16,19 @@ $black : #222 !default;
 $global-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2) !default;
 
 :global(html), :global(body), :global(.appWrapper), :global(#root) {
-  height: 100%;
+  // min-height and position: relative needed to make footer fixed at bottom of the page
+  min-height: 100vh;
+  position: relative;
   width: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Exo 2', Helvetica, Arial, Lucida, sans-serif;
+}
+
+:global(.appWrapper){
+  // padding-bottom = footer height + needed spacing
+  padding-bottom: 330px;
+  background: #EEE;
 }
 
 a {
