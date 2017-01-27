@@ -18,7 +18,6 @@ class ViewPost extends Component {
         const {isFetching, responseCode} = post;
 
         return (
-            <section className={styles.mainWrapper}>
                 <Grid fluid>
                     <Row>
                         <Col className={styles.main} md={6} mdOffset={3}>
@@ -46,7 +45,6 @@ class ViewPost extends Component {
                         </Col>
                     </Row>
                 </Grid>
-            </section>
         )
     }
 }

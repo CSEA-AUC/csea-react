@@ -1,6 +1,12 @@
 @import '../../globals';
 
-.page {
+.banner {
   background-color: $green;
   background-blend-mode: luminosity;
+}
+
+.mainWrapper {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background: #EEE;
 }

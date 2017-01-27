@@ -10,9 +10,11 @@ export default class Announcements extends Component {
                 <Banner
                     title="Announcements"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
-                    className={styles.page}
+                    className={styles.banner}
                 />
-                {this.props.children}
+                <section className={styles.mainWrapper}>
+                    {this.props.children}
+                </section>
             </div>
         )
     }

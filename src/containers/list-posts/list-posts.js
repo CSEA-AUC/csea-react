@@ -18,24 +18,22 @@ class ListPosts extends Component {
         const {nextUrl, prevUrl} = this.props;
         const isFetching = postList.isFetching;
         return (
-            <section className={styles.mainWrapper}>
-                <Grid fluid>
-                    <Row>
-                        <Col className={styles.main} md={6} mdOffset={3}>
-                            {isFetching ? <Spinner/> :
-                                <div>
-                                    <h2>Latest Announcements</h2>
-                                    <PostList
-                                        posts={postList}
-                                        nextUrl={nextUrl}
-                                        prevUrl={prevUrl}
-                                    />
-                                </div>
-                            }
-                        </Col>
-                    </Row>
-                </Grid>
-            </section>
+            <Grid fluid>
+                <Row>
+                    <Col className={styles.main} md={6} mdOffset={3}>
+                        {isFetching ? <Spinner/> :
+                            <div>
+                                <h2>Latest Announcements</h2>
+                                <PostList
+                                    posts={postList}
+                                    nextUrl={nextUrl}
+                                    prevUrl={prevUrl}
+                                />
+                            </div>
+                        }
+                    </Col>
+                </Row>
+            </Grid>
         )
     }
 }

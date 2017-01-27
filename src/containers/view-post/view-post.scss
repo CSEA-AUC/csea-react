@@ -1,18 +1,12 @@
 @import '../../globals';
 
-.mainWrapper {
-  padding-top: 20px;
-  background: #EEE;
-
-  .main {
-    margin-bottom: 30px;
-    padding: 20px;
-    color: $black;
-    background: white;
-    //box-shadow: $global-box-shadow;
-    border-radius: 5px;
-  }
-
+.main {
+  margin-bottom: 30px;
+  padding: 20px;
+  color: $black;
+  background: white;
+  //box-shadow: $global-box-shadow;
+  border-radius: 5px;
 }
 
 .post {
@@ -29,7 +23,7 @@
   }
 
   .postMeta {
-    display:inline-block;
+    display: inline-block;
     font-family: 'Quattrocento', serif;
     font-weight: 600;
     color: darken(white, 10%);
