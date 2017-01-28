@@ -52,7 +52,7 @@ export default class App extends Component {
                             <Col className={styles.copyrightWrapper} xs={6}>
                                 <div className={styles.smallLogo}/>
                                 <div>
-                                    <span>Copyright © 2017 CSEA</span>
+                                    <small>Copyright © 2017 CSEA</small>
                                 </div>
                             </Col>
                         </Row>

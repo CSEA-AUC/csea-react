@@ -64,6 +64,9 @@
   }
   .cseaLinks {
     margin: 0 0 8px 0;
+    a {
+      display: inline-block;
+    }
     strong {
       margin-right: 15px;
     }
@@ -73,13 +76,21 @@
     flex-direction: column;
     text-align: right;
     justify-content: space-between;
+
     .smallLogo {
-      height: 25px;
+      margin-bottom: 20px;
+      height: 20px;
       width: auto;
       background: url(../../../assets/img/csealogonocircle.png) no-repeat;
       background-size: contain;
       background-position-x: right;
     }
+
+    small {
+      color: $grey;
+    }
+
+
   }
 }
 
