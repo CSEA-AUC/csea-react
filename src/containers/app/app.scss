@@ -21,13 +21,67 @@
 .appFooter {
   display: block;
   background: $black;
-  border-top: 5px solid lighten($black, 30%);
+  border-top: 3px solid lighten($black, 25%);
   width: 100%;
   height: $footer-height;
   position: absolute;
   bottom: 0;
+  padding: 30px 0;
+  font-size: 1.3em;
+  color: white;
+  a {
+    margin-right: 10px;
+    color: $grey;
+    &:hover {
+      color: lighten($grey, 40%);
+    }
+  }
+  .navIcons {
+    display: flex;
+    font-size: 22px;
+    margin-bottom: 15px;
+    //justify-content: center;
+    & > * {
+      margin-right: 10px;
+      color: white;
+      background: $black;
+      display: inline-block;
+      line-height: 1px;
+      padding: 8px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .facebookIcon:hover {
+      color: white;
+      background: #3b5998;
+      border: 2px solid #3b5998;
+    }
+    .mailIcon:hover {
+      color: white;
+      background: #dd4b39;
+      border: 2px solid #dd4b39;
+    }
+  }
+  .cseaLinks {
+    margin: 0 0 8px 0;
+    strong {
+      margin-right: 15px;
+    }
+  }
+  .copyrightWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-between;
+    .smallLogo {
+      height: 25px;
+      width: auto;
+      background: url(../../../assets/img/csealogonocircle.png) no-repeat;
+      background-size: contain;
+      background-position-x: right;
+    }
+  }
 }
-
 
 :global(html), :global(body), :global(.appWrapper), :global(#root) {
   // min-height and position: relative needed to make footer fixed at bottom of the page
@@ -39,7 +93,7 @@
   font-family: 'Exo 2', Helvetica, Arial, Lucida, sans-serif;
 }
 
-:global(.appWrapper){
+:global(.appWrapper) {
   // padding-bottom = footer height + needed spacing
   padding-bottom: $footer-height + 30px;
   background: #EEE;

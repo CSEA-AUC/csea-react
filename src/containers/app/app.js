@@ -25,14 +25,17 @@ export default class App extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+
                 {this.props.children}
+
                 <footer className={styles.appFooter}>
                     <Grid>
                         <Row>
                             <Col className={styles.linksWrapper} xs={6}>
                                 <nav className={styles.navIcons}>
-                                    <Facebook className={styles.facebookIcon}/>
-                                    <Envelope className={styles.mailIcon}/>
+                                    <a className={styles.facebookIcon}
+                                       href="https://www.facebook.com/csea.auc/"><Facebook /></a>
+                                    <a className={styles.mailIcon} href="mailto:csea@aucegypt.edu"><Envelope/></a>
                                 </nav>
                                 <nav className={styles.cseaLinks}>
                                     <strong>CSEA</strong>
@@ -41,8 +44,16 @@ export default class App extends Component {
                                     <Link to={'/about'}>About</Link>
                                     <Link to={'/team'}>Team</Link>
                                 </nav>
+                                <span>
+                                    <strong>Contact us at </strong>
+                                    <a href="mailto:csea@aucegypt.edu">csea@aucegypt.edu</a>
+                                </span>
                             </Col>
                             <Col className={styles.copyrightWrapper} xs={6}>
+                                <div className={styles.smallLogo}/>
+                                <div>
+                                    <span>Copyright © 2017 CSEA</span>
+                                </div>
                             </Col>
                         </Row>
                     </Grid>
