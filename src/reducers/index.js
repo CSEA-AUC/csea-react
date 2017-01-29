@@ -2,6 +2,8 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import * as types from '../actions';
 
+import navbarReducer from './navbar'
+
 // TODO: Remove nextUrl and prevUrl, keep track of only pageNum
 const initialState = {
     postsLists: {
@@ -100,5 +102,6 @@ function post(state = initialState, action) {
 
 export default combineReducers({
     blog,
+    navbar: navbarReducer,
     routing: routerReducer
 })
