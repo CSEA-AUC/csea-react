@@ -10,18 +10,20 @@ export default class App extends Component {
     render() {
         return (
             <div className="appWrapper">
-                <Navbar fixedTop fluid collapseOnSelect inverse className={styles.navbar}>
+                <Navbar fixedTop fluid collapseOnSelect className={styles.navbar}>
                     <Navbar.Header>
                         <Navbar.Brand>
                             {/*Change to IndexLink?*/}
-                            <Link to={'/'}>CSEA</Link>
+                            <Link to={'/'}><div className={styles.brand}/></Link>
                         </Navbar.Brand>
                         <Navbar.Toggle/>
                     </Navbar.Header>
                     <Navbar.Collapse>
-                        <Nav pullRight>
-                            <LinkContainer to={'/about'}><NavItem eventKey={1}>About</NavItem></LinkContainer>
-                            <LinkContainer to={'/announcements'}><NavItem eventKey={2} href="#">Announcements</NavItem></LinkContainer>
+                        <Nav>
+                            <LinkContainer to={'/announcements'} className={styles.announcementsLink}><NavItem eventKey={1}>Announcements</NavItem></LinkContainer>
+                            <LinkContainer to={'/notes'}><NavItem eventKey={2} className={styles.notesLink}>Notes</NavItem></LinkContainer>
+                            <LinkContainer to={'/team'}><NavItem eventKey={3} className={styles.teamLink}>The Team</NavItem></LinkContainer>
+                            <LinkContainer to={'/about'}><NavItem eventKey={4} className={styles.aboutLink}>About</NavItem></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
