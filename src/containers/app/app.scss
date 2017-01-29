@@ -1,20 +1,27 @@
 @import '../../globals';
 
+// Use important when overriding navbar styles
 .navbar {
-  background: transparent;
-  width: 100%;
-  margin: 0;
+  background: #EEE;
+  box-shadow: $global-box-shadow;
+  color: $black;
   height: $navbar-height;
-  border: none;
   letter-spacing: 0.07em;
-  color: #EEE;
   text-transform: uppercase;
-  :global(.navbar-nav) > li > a {
-    color: #EEE;
-    font-weight: 600;
-    &:hover {
-      color: $green;
-    }
+
+  ul li a {
+    font-weight: 400 !important;
+  }
+  :global(.active)
+  {
+    border-bottom: 3px solid darken($green, 10%);
+  }
+  .brand {
+    display: inline-block;
+    height: 20px;
+    width: 100px;
+    background: url(../../../assets/img/csealogonocircle.png) no-repeat;
+    background-size: contain;
   }
 }
 
