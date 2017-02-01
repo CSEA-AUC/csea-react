@@ -1,8 +1,8 @@
 @import '../../globals';
 
 .banner {
-  background-color: $green;
-  background-blend-mode: luminosity;
+  background-color: darken($blog-base-color, 20%);
+  background-blend-mode: multiply;
 }
 
 .mainWrapper {

@@ -1,3 +1,10 @@
+@import '../../globals';
+
+.banner {
+  background-color: $about-base-color;
+  background-blend-mode: multiply;
+}
+
 .mainWrapper {
   padding-top: 20px;
   background: #EEE;
