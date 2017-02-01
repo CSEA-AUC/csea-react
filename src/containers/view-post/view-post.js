@@ -21,7 +21,7 @@ class ViewPost extends Component {
                 <Grid fluid>
                     <Row>
                         <Col className={styles.main} md={6} mdOffset={3}>
-                            {isFetching ? <Spinner/> :
+                            {isFetching ? <Spinner bgColor={styles.spinnerColor}/> :
                                 <div className={styles.post}>
                                     <header>
                                         <h2 className={styles.title}>{post.title}</h2>

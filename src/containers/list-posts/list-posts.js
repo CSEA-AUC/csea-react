@@ -21,7 +21,7 @@ class ListPosts extends Component {
             <Grid fluid>
                 <Row>
                     <Col className={styles.main} md={6} mdOffset={3}>
-                        {isFetching ? <Spinner/> :
+                        {isFetching ? <Spinner bgColor={styles.spinnerColor}/> :
                             <div>
                                 <h2>Latest Announcements</h2>
                                 <PostList
