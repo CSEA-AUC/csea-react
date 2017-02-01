@@ -2,27 +2,48 @@
 
 // Use important when overriding navbar styles
 .navbar {
-  background: #EEE;
-  box-shadow: $global-box-shadow;
+  background: transparent;
   color: $black;
-  height: $navbar-height;
+  margin: 0;
+  border: none;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+
+  @media (max-width: 767px) {
+    position: fixed;
+    background: #EEE;
+  }
 
   ul li a {
     font-weight: 400 !important;
   }
-  :global(.active)
-  {
+
+  :global(.active) {
     border-bottom: 3px solid darken($green, 10%);
   }
+  :global(.nav li a) {
+    padding: 15px 8px;
+  }
+
   .brand {
     display: inline-block;
     height: 20px;
     width: 100px;
-    background: url(../../../assets/img/csealogonocircle.png) no-repeat;
+    background: url(../../../assets/img/csealogonocircledark.png) no-repeat;
     background-size: contain;
   }
+}
+
+:global(.navbar-fixed-top) {
+  position: fixed;
+  background: lighten(#EEE, 5%);
+  box-shadow: $global-box-shadow;
 }
 
 .appFooter {
@@ -96,7 +117,6 @@
     small {
       color: $grey;
     }
-
 
   }
 }

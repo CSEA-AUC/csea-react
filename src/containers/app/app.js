@@ -2,16 +2,18 @@ import React, {Component, PropTypes} from 'react'
 import {Nav, NavItem, Navbar, Grid, Row, Col} from 'react-bootstrap'
 import {Link} from 'react-router'
 import {connect} from 'react-redux'
+
 import {LinkContainer} from 'react-router-bootstrap'
 import Envelope from 'react-icons/lib/fa/envelope'
 import Facebook from 'react-icons/lib/fa/facebook'
+
 import styles from './app.scss'
 
 class App extends Component {
     render() {
         return (
             <div className="appWrapper">
-                <Navbar fixedTop={!this.props.fixed} fluid collapseOnSelect className={styles.navbar}>
+                <Navbar fixedTop fluid collapseOnSelect className={styles.navbar}>
                     <Navbar.Header>
                         <Navbar.Brand>
                             {/*Change to IndexLink?*/}
