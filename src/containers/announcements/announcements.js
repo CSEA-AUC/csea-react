@@ -14,6 +14,7 @@ class Announcements extends Component {
                     title="Announcements"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                     className={styles.banner}
+                    bottomPadding
                 />
                 <Waypoint onEnter={this.props.setNavbarStatic} onLeave={this.props.setNavbarFixed}/>
                 <section className={styles.mainWrapper}>

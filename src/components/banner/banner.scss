@@ -10,7 +10,6 @@
   text-align: center;
 
   padding-top: $navbar-height + 1px;
-  padding-bottom: 40px;
 
   color: #EEE;
 
@@ -19,8 +18,9 @@
   background-image: url('./banner_pattern.png');
   background-repeat: repeat;
 
-  border-bottom: 3px solid darken($green, 10%);
+  box-shadow: $global-box-shadow;
 
+  margin: 0 0 10px 0;
 
   header {
     text-shadow: rgba(0, 0, 0, 0.3) 1px 2px 1px, rgba(0, 0, 0, 0.4) 1px 2px 3px;
@@ -39,7 +39,6 @@
   }
 }
 
-.mainWrapper {
-  padding-top: 15px;
-  background: #EEE;
+.bottomPadding {
+  padding-bottom: 100px;
 }

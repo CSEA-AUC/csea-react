@@ -1,15 +1,16 @@
 @import '../../globals';
 
 .main {
-  margin-bottom: 30px;
-  padding: 20px;
-  color: $black;
-  background: white;
-  //box-shadow: $global-box-shadow;
-  border-radius: 5px;
+  // Should contain common css between spinner and post
 }
 
 .post {
+  background: white;
+  padding: 20px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  color: $black;
+
   header {
     border-bottom: 2px solid $blog-base-color;
     .title {
