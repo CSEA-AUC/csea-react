@@ -68,12 +68,8 @@ class App extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return state.navbar
-}
-
 App.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export default connect(mapStateToProps, null)(App)
+export default connect(null, null)(App)

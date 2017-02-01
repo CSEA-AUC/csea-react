@@ -7,12 +7,12 @@
   background: url("./banner.jpg") no-repeat fixed center 0;
   background-size: cover;
   //background-blend-mode: luminosity;
-  border-bottom: 3px solid darken($green, 10%);
   box-shadow: $global-box-shadow;
   min-height: 35vh;
+  margin-bottom: 10px;
 
   header {
-    margin: 30px 0;
+    margin: 20px 0;
     h1 {
       font-weight: 600;
       margin: 10px;

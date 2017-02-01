@@ -19,5 +19,5 @@ export default class Banner extends Component {
 Banner.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
-    bottomPadding : PropTypes.bool.optional
+    bottomPadding : PropTypes.bool
 };

@@ -7,10 +7,6 @@ export const POST_LIST = createRequestTypes('POST_LIST');
 export const LOAD_POST_LIST = 'LOAD_POST_LIST';
 export const LOAD_POST = 'LOAD_POST';
 
-// navbar actions
-export const SET_NAVBAR_FIXED = 'SET_NAVBAR_FIXED';
-export const SET_NAVBAR_STATIC = 'SET_NAVBAR_STATIC';
-
 // Action creators
 export const post = {
     request: postSlug => action(POST.REQUEST, {postSlug}),
@@ -26,6 +22,3 @@ export const postList = {
 
 export const loadPostList = (pageNum) => action(LOAD_POST_LIST, {pageNum});
 export const loadPost = (postSlug) => action(LOAD_POST, {postSlug});
-
-export const setNavbarFixed = () => action(SET_NAVBAR_FIXED);
-export const setNavbarStatic = () => action(SET_NAVBAR_STATIC);
