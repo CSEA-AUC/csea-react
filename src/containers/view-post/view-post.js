@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col, Image} from 'react-bootstrap'
 
-import {loadPost}from '../../actions/'
+import {loadPost}from '../../actions/blog'
 import {Spinner} from '../../components'
 import Markdown from 'react-remarkable'
 

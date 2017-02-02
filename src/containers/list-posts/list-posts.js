@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 
-import {loadPostList}from '../../actions/'
+import {loadPostList}from '../../actions/blog'
 import {PostList, Spinner} from '../../components/'
 
 import styles from './list-posts.scss'

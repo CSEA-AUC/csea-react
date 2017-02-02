@@ -10,7 +10,8 @@ import {
     About,
     Announcements,
     ListPosts,
-    ViewPost
+    ViewPost,
+    Notes
 } from './containers'
 
 
@@ -20,11 +21,12 @@ export default (
     <Router history={history}>
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
-            <Route path="about" component={About}/>
             <Route path="announcements" component={Announcements}>
                 <IndexRoute component={ListPosts}/>
                 <Route path=":slug" component={ViewPost}/>
             </Route>
+            <Route path="notes" component={Notes}/>
+            <Route path="about" component={About}/>
             {/*<Route path="*" status={404}/>*/}
         </Route>
     </Router>
