@@ -16,17 +16,15 @@
       padding-left: 8px;
       padding-right: 8px;
       &:hover, &:focus {
-        background: $base-green;
-        color: $base-white;
+        color: darken($base-green, 5%);
       }
     }
     :global(.active) > a {
       background: none;
-      font-weight: 500;
-      background: $base-green !important;
-      color: $base-white !important;
-      &:hover, &:focus {
+      color: darken($base-green, 5%);
+      &:hover, &:focus{
         background: none;
+        color: darken($base-green, 5%);
       }
     }
   }
