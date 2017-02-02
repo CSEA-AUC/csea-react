@@ -13,6 +13,7 @@
 
   .nav {
     li > a {
+      transition: color 0.15s ease-in-out;
       padding-left: 8px;
       padding-right: 8px;
       &:hover, &:focus {
