@@ -14,11 +14,11 @@ export default class PostList extends Component {
                     <h5 className={styles.subtitle}>{post.subtitle}</h5>
                 </header>
                 <div className={styles.snippet}>
-                    <span>{post.content}</span>
+                    <span>{post.excerpt}</span>
                 </div>
                 <footer>
                     <span className={styles.postAuthor}>By {post.author}</span>
-                    <span className={styles.postDate}>{post.date}</span>
+                    <span className={styles.postDate}>{post.created}</span>
                     <span className={styles.postCommentCount}>{post.comment_count + ' Comments'}</span>
                     <span className={styles.postContinueReading}>Continue Reading</span>
                 </footer>
