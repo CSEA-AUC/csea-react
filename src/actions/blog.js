@@ -21,4 +21,3 @@ export const loadPostList = (pageNum) => action(LOAD_POST_LIST, {pageNum});
 
 export const LOAD_POST = 'LOAD_POST';
 export const loadPost = (postSlug) => action(LOAD_POST, {postSlug});
-
