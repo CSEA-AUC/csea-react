@@ -1,17 +1,33 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
 $navbar-height: 52px;
 $footer-height: 200px;
 
-$blog-base-color: #4cbed2 !default;
-$about-base-color: #003459 !default;
+$base-white: white !default;
+$base-black: #333 !default;
+$base-green: #4cbed2 !default;
 
-$grey: #666;
+$grey: shade($base-white, 20%);
+
+$global-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2) !default;
+
 //$good-green: #62c462 !default;
 //$good-orange: #f89406 !default;
 //$good-red: #ee5f5b !default;
 //$good-blue: #5bc0de !default;
-$dark-blue: #003459 !default;
-$light-blue: #84C3DF !default;
-$green: #4cbed2 !default;
-$black : #222 !default;
-
-$global-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2) !default;

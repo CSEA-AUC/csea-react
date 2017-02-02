@@ -2,33 +2,33 @@
 
 // Use important when overriding navbar styles
 .navbar {
-  background: transparent;
-  color: $black;
+  color: $base-black;
   margin: 0;
   border: none;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
+  background: lighten(#EEE, 5%);
+  box-shadow: $global-box-shadow;
 
-  @media (max-width: 767px) {
-    position: fixed;
-    background: #EEE;
-  }
-
-  ul li a {
-    font-weight: 400 !important;
-  }
-
-  :global(.active) {
-    border-bottom: 3px solid darken($green, 10%);
-  }
-  :global(.nav li a) {
-    padding: 15px 8px;
+  .nav {
+    li > a {
+      padding-left: 8px;
+      padding-right: 8px;
+      &:hover, &:focus {
+        background: $base-green;
+        color: $base-white;
+      }
+    }
+    :global(.active) > a {
+      background: none;
+      font-weight: 500;
+      background: $base-green !important;
+      color: $base-white !important;
+      &:hover, &:focus {
+        background: none;
+      }
+    }
   }
 
   .brand {
@@ -40,16 +40,10 @@
   }
 }
 
-:global(.navbar-fixed-top) {
-  position: fixed;
-  background: lighten(#EEE, 5%);
-  box-shadow: $global-box-shadow;
-}
-
 .appFooter {
   display: block;
-  background: $black;
-  border-top: 3px solid lighten($black, 25%);
+  background: $base-black;
+  border-top: 3px solid rgba($grey, .15);
   width: 100%;
   height: $footer-height;
   position: absolute;
@@ -72,7 +66,7 @@
     & > * {
       margin-right: 10px;
       color: white;
-      background: $black;
+      background: $base-black;
       display: inline-block;
       line-height: 1px;
       padding: 8px;
@@ -138,10 +132,10 @@
 }
 
 a {
-  color: $black;
+  color: $base-black;
   text-decoration: none;
   &:focus, &:hover {
-    color: lighten($black, 20%);
+    color: lighten($base-black, 20%);
     text-decoration: none;
   }
 }
