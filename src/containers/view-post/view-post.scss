@@ -12,7 +12,7 @@
   color: $base-black;
 
   header {
-    border-bottom: 2px solid $base-green;
+    border-bottom: 2px solid darken($base-green, 5%);
     .title {
       margin-top: 0;
       font-weight: 600;
@@ -34,7 +34,7 @@
     padding: 10px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    background: $base-green;
+    background: darken($base-green, 5%);
     .author {
       padding-right: 10px;
       border-right: 1px solid darken(white, 10%);
