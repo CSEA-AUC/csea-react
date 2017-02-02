@@ -6,8 +6,7 @@ function* loadNotesSaga(action) {
     try {
         yield put(actions.notes.request());
         const apiData = yield call(api.fetchResource, 'notes/');
-        console.log(apiData);
-        // yield put(actions.notes.success(apiData.data.results, apiData.status));
+        yield put(actions.notes.success(apiData.data.results, apiData.status));
     }
     catch (error) {
         yield put(actions.notes.failure(error.status));
