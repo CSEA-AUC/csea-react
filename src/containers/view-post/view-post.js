@@ -20,7 +20,7 @@ class ViewPost extends Component {
         return (
                 <Grid fluid>
                     <Row>
-                        <Col className={styles.main} md={6} mdOffset={3}>
+                        <Col className={styles.main} lg={6} lgOffset={3}>
                             {isFetching ? <Spinner bgColor={styles.spinnerColor}/> :
                                 <div className={styles.post}>
                                     <header>
