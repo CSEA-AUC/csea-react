@@ -1,0 +1,70 @@
+@import '../../globals';
+
+.banner {
+  background-color: $base-green;
+  background-blend-mode: multiply;
+}
+
+.mainWrapper {
+  padding-top: 30px;
+}
+
+.sidebar {
+  background: $base-green;
+  border-right: 1px solid rgba(0, 0, 0, .15);
+}
+
+.main {
+  background: $base-white;
+}
+
+.notesList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style-type: none;
+  font-size: 16px;
+  padding: 0;
+  .note {
+    $note-padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin: 5px;
+    padding: $note-padding;
+    height: 200px;
+
+    border: 3px solid darken($base-green, 6%);
+
+    header {
+      h3 {
+        margin: 0 0 10px;
+      }
+      .courseMeta {
+
+      }
+    }
+
+    .noteComment {
+      flex-grow: 1;
+    }
+
+    footer{
+      font-size: 15px;
+      font-family: 'Quattrocento', serif;
+
+      color: $base-white;
+
+      margin-top: 15px;
+      margin-left: -$note-padding;
+      margin-right: -$note-padding;
+      margin-bottom: -$note-padding;
+
+      padding: 10px;
+
+      background: darken($base-green, 6%);
+    }
+  }
+}
