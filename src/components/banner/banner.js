@@ -21,3 +21,7 @@ Banner.propTypes = {
     subtitle: PropTypes.string.isRequired,
     bottomPadding : PropTypes.bool
 };
+
+Banner.defaultProps = {
+    bottomPadding: false
+};
