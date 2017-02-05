@@ -15,7 +15,8 @@ class Home extends Component {
     }
 
     render() {
-        const postList = this.props.postsLists[1];
+        let postList = this.props.postsLists[1];
+        postList.results = postList.results.slice(0, 3);
         const isFetchingPostList = postList.isFetching;
         return (
             <div>
