@@ -22,8 +22,7 @@ class ListPosts extends Component {
                 <Row>
                     <Col className={styles.main} lg={6} lgOffset={3}>
                         {isFetching ? <Spinner bgColor={styles.spinnerColor}/> :
-                            <div>
-                                <h2>Latest Announcements</h2>
+                            <div className={styles.postListWrapper}>
                                 <PostList
                                     posts={postList}
                                     nextUrl={nextUrl}

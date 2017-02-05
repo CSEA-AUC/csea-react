@@ -25,8 +25,8 @@ class Notes extends Component {
                 <header>
                     <h3>{course}</h3>
                     <div className={styles.courseMeta}>
-                        <span className={styles.courseProf}>{note.professor}</span>
-                        <span className={styles.courseDate}>{semesterDict[note.semester] + ' ' + note.year}</span>
+                        <div className={styles.courseProf}>Dr.{note.professor}</div>
+                        <div className={styles.courseDate}><em>{semesterDict[note.semester] + ' ' + note.year}</em></div>
                     </div>
                 </header>
                 <section className={styles.noteComment}>
@@ -54,23 +54,17 @@ class Notes extends Component {
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                     className={styles.banner}
                 />
-                <section className={styles.mainWrapper}>
-                    <Grid>
-                        <Row>
-                            <Col className={styles.sidebar} md={3}>
-                                <h2>Latest Announcements</h2>
-                            </Col>
-                            <Col className={styles.main} md={9}>
-                                {isFetching ? <Spinner/> :
-                                    <ul className={styles.notesList}>
-                                        {notes.results.map(this.createNote)}
-                                        {notes.results.map(this.createNote)}
-                                        {notes.results.map(this.createNote)}
-                                    </ul>
-                                }
-                            </Col>
-                        </Row>
-                    </Grid>
+                <section className={'container ' + styles.mainWrapper}>
+                    <h2>Latest Announcements</h2>
+                    {isFetching ? <Spinner/> :
+                        <ul className={styles.notesList}>
+                            {notes.results.map(this.createNote)}
+                            {notes.results.map(this.createNote)}
+                            {notes.results.map(this.createNote)}
+                            {notes.results.map(this.createNote)}
+                            {notes.results.map(this.createNote)}
+                        </ul>
+                    }
                 </section>
             </div>
         )

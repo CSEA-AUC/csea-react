@@ -1,39 +1,22 @@
 import React, {Component, PropTypes} from 'react'
 import {Image, Grid, Row, Col} from 'react-bootstrap'
+import {connect} from 'react-redux'
 
-import styles from './home.scss';
+import {PostList, Spinner} from '../../components/'
+
+import {loadPostList}from '../../actions/blog'
+
 import logo from '../../../assets/img/csealogo.png'
+import styles from './home.scss';
 
-export default class Home extends Component {
+class Home extends Component {
+    componentWillMount() {
+        this.props.loadPostList(1);
+    }
+
     render() {
-        const article = (
-            <article className={styles.post}>
-                <header>
-                    <h2 className={styles.title}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h2>
-                    <h5 className={styles.subtitle}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h5>
-                </header>
-                <div className={styles.snippet}>
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at vestibulum nunc.
-                        Proin tincidunt ex sapien, maximus tristique ligula finibus sit amet. Quisque eu massa mollis, egestas ipsum vel, molestie magna.
-                        Donec porttitor ac turpis non pharetra. Duis vitae interdum orci. Morbi nisl tellus, aliquam vel lobortis id, maximus at purus.
-                        Nam rutrum leo lectus, vel dictum velit luctus quis. Donec id eleifend risus. Aliquam erat volutpat. Maecenas ac nibh diam. In non cursus felis.
-                    </span>
-                </div>
-                <footer>
-                    <span className={styles.postAuthor}>CSEA Admin</span>
-                    <span className={styles.postDate}>15 SEPTEMBER 2015</span>
-                    <span className={styles.postCommentCount}>5 Comments</span>
-                    <span className={styles.postContinueReading}>Continue Reading</span>
-                </footer>
-            </article>
-        );
-
+        const postList = this.props.postsLists[1];
+        const isFetchingPostList = postList.isFetching;
         return (
             <div>
                 <section className={"container-fluid " + styles.banner}>
@@ -49,10 +32,19 @@ export default class Home extends Component {
                     <Grid fluid>
                         <Row>
                             <Col className={styles.main} md={6} mdOffset={3}>
-                                <h2>Latest Announcements</h2>
-                                {article}
-                                {article}
-                                {article}
+                                <header>
+                                    <span>Latest Announcements</span>
+                                    <span>View More Posts</span>
+                                </header>
+                                {isFetchingPostList ? <Spinner/> :
+                                    <div>
+                                        <PostList
+                                            posts={postList}
+                                            nextUrl={''}
+                                            prevUrl={''}
+                                        />
+                                    </div>
+                                }
                             </Col>
                         </Row>
                     </Grid>
@@ -61,3 +53,17 @@ export default class Home extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    const {postsLists} = state.blog;
+    return {postsLists}
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        loadPostList: (pageNum) =>
+            dispatch(loadPostList(pageNum))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

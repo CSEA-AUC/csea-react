@@ -32,7 +32,6 @@
     //border-left: 2px solid darken($blog-base-color, 25%);
     //border-right: 2px solid darken($blog-base-color, 25%);
     padding: 10px;
-    margin-bottom: 20px;
     text-transform: uppercase;
     background: darken($base-green, 5%);
     .author {
@@ -52,7 +51,7 @@
       font-size: 18px;
     }
     .contentImage {
-      margin: 0 auto;
+      margin: 20px auto 0 auto;
     }
   }
 }
