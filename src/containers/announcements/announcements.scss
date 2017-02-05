@@ -1,7 +1,7 @@
 @import '../../globals';
 
 .banner {
-  background-color: $base-green;
+  background-color: darken($base-green, 5%);
   background-blend-mode: multiply;
 }
 

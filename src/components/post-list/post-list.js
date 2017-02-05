@@ -11,7 +11,7 @@ import styles from './post-list.scss';
 
 export default class PostList extends Component {
     createPost(post) {
-        const timestamp = moment(post.created);
+        const timestamp = moment(post.created).format('D MMM YYYY');
         return (
             <article key={post.slug} className={styles.post}>
                 <header>
@@ -24,11 +24,8 @@ export default class PostList extends Component {
                     <span>{post.excerpt}</span>
                 </div>
                 <footer>
-                    <div className={styles.postAuthor}>
-                        <UserIcon/>
-                        <span>{post.author}</span>
-                    </div>
-                    <span className={styles.postDate}><CalendarIcon/>{timestamp.format('D MMM YYYY')}</span>
+                    <span className={styles.postAuthor}><UserIcon/>{post.author}</span>
+                    <span className={styles.postDate}><CalendarIcon/>{timestamp}</span>
                     <span className={styles.postCommentCount}><CommentsIcon/>{post.comment_count + ' Comments'}</span>
                     <span className={styles.postContinueReading}>Continue Reading<RightAngleIcon/></span>
                 </footer>
