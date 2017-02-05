@@ -2,8 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col, Image} from 'react-bootstrap'
 
+import moment from 'moment'
+
 import {loadPost}from '../../actions/blog'
 import {Spinner} from '../../components'
+
 import Markdown from 'react-remarkable'
 
 import styles from './view-post.scss'
@@ -16,7 +19,7 @@ class ViewPost extends Component {
     render() {
         const post = this.props.postsBySlug[this.props.postSlug] || {isFetching: true, responseCode: null};
         const {isFetching, responseCode} = post;
-
+        const timestamp = !isFetching ? moment(post.created).format('DD MMMM YYYY') : undefined;
         return (
                 <Grid fluid>
                     <Row>
@@ -29,7 +32,7 @@ class ViewPost extends Component {
                                     </header>
                                     <div className={styles.postMeta}>
                                         <span className={styles.author}>{post.author}</span>
-                                        <span className={styles.timestamp}>{post.created}</span>
+                                        <span className={styles.timestamp}>{timestamp}</span>
                                     </div>
                                     <div className={styles.contentWrapper}>
                                         {post.image &&
