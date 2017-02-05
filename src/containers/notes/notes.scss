@@ -45,14 +45,13 @@
         font-size: 16px;
         display: flex;
         flex-direction: row;
+        margin-top: 2px;
         .courseProf{
           margin-right: 20px;
-          justify-self: flex-start;
         }
         .courseDate{
-          justify-self: flex-end;
-          align-self: flex-end;
-          justify-content: flex-end;
+          flex-grow: 1;
+          text-align: right;
         }
       }
     }
@@ -64,7 +63,8 @@
     }
 
     footer{
-      font-size: 15px;
+      display: flex;
+      font-size: 16px;
       font-family: 'Quattrocento', serif;
 
       color: $base-white;
@@ -78,6 +78,16 @@
 
       background: darken($base-green, 15%);
 
+      .downloadButtonWrapper{
+        flex-grow: 1;
+        text-align: right;
+        .downloadButton {
+          display:inline-block;
+          &:hover, &:focus{
+            color: darken($base-white, 10%);
+          }
+        }
+      }
     }
   }
 }

@@ -47,6 +47,11 @@
       margin-right: 10px;
     }
 
+    :global(svg) {
+      vertical-align: text-top !important;    // Needed to override inline-styling from react-icons
+      display: inline-block;
+      margin-right: 5px;
+    }
     .postAuthor {
     }
     .postDate {
@@ -55,6 +60,7 @@
     .postCommentCount {
 
     }
+
     .postContinueReading {
       margin-left: auto;
       margin-right: 0;

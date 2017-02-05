@@ -3,8 +3,10 @@ import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 import {Banner, Spinner} from '../../components'
+import Download from 'react-icons/lib/fa/download'
 
 import {loadNotes}from '../../actions/notes'
+
 import styles from './notes.scss'
 
 class Notes extends Component {
@@ -37,7 +39,10 @@ class Notes extends Component {
                         <div className={styles.noteAuthor}>{note.author}</div>
                         <div className={styles.noteCreated}>{note.created}</div>
                     </div>
-                    <div className={styles.downloadButton}>
+                    <div className={styles.downloadButtonWrapper}>
+                        <div className={styles.downloadButton}>
+                            <Download/>
+                        </div>
                     </div>
                 </footer>
             </li>
