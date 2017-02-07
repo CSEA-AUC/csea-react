@@ -23,13 +23,17 @@
 
     margin: 5px;
     padding: $note-padding;
-    height: 200px;
     background: $base-white;
 
     box-shadow: $global-box-shadow;
     border: 3px solid darken($base-green, 15%);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+
+    min-width: 35%;
+    max-width: 50%;
+
+    height: 250px;
 
     header {
       padding-bottom: 5px;
@@ -78,6 +82,12 @@
 
       background: darken($base-green, 15%);
 
+      .noteMeta {
+        display: flex;
+        & > * {
+          margin-right: 10px;
+        }
+      }
       .downloadButtonWrapper{
         flex-grow: 1;
         text-align: right;
