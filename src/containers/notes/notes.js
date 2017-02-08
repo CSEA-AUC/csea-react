@@ -4,7 +4,9 @@ import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 import {Banner, Spinner} from '../../components'
-import Download from 'react-icons/lib/fa/download'
+import DownloadIcon from 'react-icons/lib/fa/download'
+import UserIcon from 'react-icons/lib/fa/user'
+import CalendarIcon from 'react-icons/lib/fa/calendar'
 import {loadNotes}from '../../actions/notes'
 
 import moment from 'moment'
@@ -40,12 +42,12 @@ class Notes extends Component {
                 </section>
                 <footer>
                     <div className={styles.noteMeta}>
-                        <div className={styles.noteAuthor}>{note.author}</div>
-                        <div className={styles.noteCreated}>{timestamp}</div>
+                        <div className={styles.noteAuthor}><UserIcon/>{note.author}</div>
+                        <div className={styles.noteCreated}><CalendarIcon/>{timestamp}</div>
                     </div>
                     <div className={styles.downloadButtonWrapper}>
                         <div className={styles.downloadButton}>
-                            <a href={note.note}><Download/></a>
+                            <a href={note.note}><DownloadIcon/></a>
                         </div>
                     </div>
                 </footer>

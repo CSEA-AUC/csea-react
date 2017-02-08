@@ -130,11 +130,15 @@
   background: #EEE;
 }
 
+:global(svg) {
+  vertical-align: text-top !important;    // Needed to override inline-styling from react-icons
+  display: inline-block;
+}
+
 a {
-  color: $base-black;
   text-decoration: none;
   &:focus, &:hover {
-    color: lighten($base-black, 20%);
+    color: $base-green;
     text-decoration: none;
   }
 }
