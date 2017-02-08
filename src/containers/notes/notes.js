@@ -30,11 +30,14 @@ class Notes extends Component {
         return (
             <li key={note.id} className={styles.note}>
                 <header>
-                    <h3>{note.course_title}</h3>
-                    <h3>{course_identifier}</h3>
+                    <a href={note.note}>
+                        <h3>{note.course_title}</h3>
+                        <h3>{course_identifier}</h3>
+                    </a>
                     <div className={styles.courseMeta}>
                         <div className={styles.courseProf}>Dr. {note.professor}</div>
-                        <div className={styles.courseDate}><em>{semesterDict[note.semester] + ' ' + note.year}</em></div>
+                        <div className={styles.courseDate}><em>{semesterDict[note.semester] + ' ' + note.year}</em>
+                        </div>
                     </div>
                 </header>
                 <section className={styles.noteComment}>
@@ -46,8 +49,8 @@ class Notes extends Component {
                         <div className={styles.noteCreated}><CalendarIcon/>{timestamp}</div>
                     </div>
                     <div className={styles.downloadButtonWrapper}>
-                        <div className={styles.downloadButton}>
-                            <a href={note.note}><DownloadIcon/></a>
+                        <div>
+                            <a href={note.note} className={styles.downloadButton}><DownloadIcon/></a>
                         </div>
                     </div>
                 </footer>

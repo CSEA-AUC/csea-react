@@ -26,18 +26,28 @@
     background: $base-white;
 
     box-shadow: $global-box-shadow;
-    border: 3px solid darken($base-green, 15%);
+    border: 3px solid $dark-green;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 
-    min-width: 35%;
-    max-width: 50%;
-
-    height: 250px;
-
+    width: 30%;
+    height: 300px;
+    @media (max-width: 830px) {
+      width: 48%;
+    }
+    @media (max-width: 550px) {
+      width: 100%;
+    }
     header {
       padding-bottom: 5px;
       border-bottom: 1px solid rgba($base-black, .2);
+      a {
+        display: inline-block;
+        color: $base-black;
+        &:hover, &:focus {
+          color: $base-green;
+        }
+      }
       h3 {
         margin: 0;
         //margin: 0 0 10px;
@@ -51,7 +61,6 @@
         flex-direction: row;
         margin-top: 2px;
         color: $grey;
-
         .courseProf{
           margin-right: 20px;
         }
@@ -80,9 +89,9 @@
       margin-right: -$note-padding;
       margin-bottom: -$note-padding;
 
-      padding: 7px 10px;
+      padding: 7px 10px 4px;
 
-      background: darken($base-green, 15%);
+      background: $dark-green;
 
       :global(svg) {
         margin-right: 3px;
@@ -99,8 +108,9 @@
         text-align: right;
         .downloadButton {
           display:inline-block;
+          color: inherit;
           &:hover, &:focus{
-            color: darken($base-white, 10%);
+            color: $dark-white;
           }
         }
       }
