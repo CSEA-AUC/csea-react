@@ -7,7 +7,7 @@ import {Banner, Spinner} from '../../components'
 import DownloadIcon from 'react-icons/lib/fa/download'
 import UserIcon from 'react-icons/lib/fa/user'
 import CalendarIcon from 'react-icons/lib/fa/calendar'
-import {loadNotes}from '../../actions/notes'
+import {loadNotes, selectCourse, loadAvailCourses}from '../../actions/notes'
 
 import moment from 'moment'
 
@@ -86,14 +86,16 @@ class Notes extends Component {
 }
 
 function mapStateToProps(state) {
-    const {currentNotes, selectedCourse} = state.notes;
-    return {currentNotes, selectedCourse}
+    const {currentNotes, selectedCourse, availableCourses} = state.notes;
+    return {currentNotes, selectedCourse, availableCourses}
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        loadNotes: () =>
-            dispatch(loadNotes())
+        loadNotes: (courseName) =>
+            dispatch(loadNotes(courseName)),
+        selectCourse: (courseName) =>
+            dispatch(selectCourse(courseName)),
     }
 }
 

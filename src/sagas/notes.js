@@ -2,6 +2,7 @@ import {takeEvery, put, call, fork, select} from 'redux-saga/effects'
 import * as actions from '../actions/notes'
 import * as api from '../services/api'
 
+// Load Notes Saga
 function* loadNotesSaga(action) {
     try {
         yield put(actions.notes.request());
@@ -17,9 +18,19 @@ function* watchLoadNotes() {
     yield takeEvery(actions.LOAD_NOTES, loadNotesSaga);
 }
 
+// Select Course Sage
+function* SelectCourseSaga(action) {
+    yield put(actions.loadNotes(action.courseName))
+}
+
+function* watchSelectCourse() {
+    yield takeEvery(actions.SELECT_COURSE, SelectCourseSaga);
+}
+
 // Notes Saga
 export default function* noteSaga() {
     yield [
         fork(watchLoadNotes),
+        fork(watchSelectCourse),
     ]
 }
