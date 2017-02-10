@@ -7,7 +7,7 @@ export const NOTES = createRequestTypes('NOTE');
 export const notes = {
     request: (courseName) => action(NOTES.REQUEST, {courseName}),
     success: (courseName, notes, responseCode) => action(NOTES.SUCCESS, {courseName, notes, responseCode}),
-    failure: (courseName, error) => action(NOTES.FAILURE, {courseName, errorCode})
+    failure: (courseName, errorCode) => action(NOTES.FAILURE, {courseName, errorCode})
 };
 
 
@@ -21,5 +21,5 @@ export const COURSES = createRequestTypes('COURSE');
 export const courses = {
     request: () => action(COURSES.REQUEST),
     success: (courses, responseCode) => action(COURSES.SUCCESS, {courses, responseCode}),
-    failure: (error) => action(COURSES.FAILURE, {errorCode})
+    failure: (errorCode) => action(COURSES.FAILURE, {errorCode})
 };
