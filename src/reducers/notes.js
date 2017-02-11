@@ -14,7 +14,7 @@ const initialState = {
 function notes(state = initialState, action) {
     switch (action.type) {
         case types.SELECT_COURSE:
-            return {...state, notesByCourse: action.courseName};
+            return {...state, notesByCourse: action.course};
 
         case types.NOTES.REQUEST:
         case types.NOTES.SUCCESS:
@@ -32,18 +32,18 @@ function notes(state = initialState, action) {
 function notesByCourseReducer(state=initialState, action) {
     switch(action.type) {
         case types.NOTES.REQUEST:
-            return {...state, [action.courseName]: {
+            return {...state, [action.course]: {
                 isFetching: true,
                 responseCode: null
             }};
         case types.NOTES.SUCCESS:
-            return {...state, [action.courseName]: {
+            return {...state, [action.course]: {
                 isFetching: false,
                 responseCode: action.responseCode,
                 results: action.notes
             }};
         case types.NOTES.FAILURE:
-            return {...state, [action.courseName]: {
+            return {...state, [action.course]: {
                 isFetching: false,
                 responseCode: action.errorCode,
             }}

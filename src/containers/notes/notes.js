@@ -7,7 +7,7 @@ import {Banner, Spinner} from '../../components'
 import DownloadIcon from 'react-icons/lib/fa/download'
 import UserIcon from 'react-icons/lib/fa/user'
 import CalendarIcon from 'react-icons/lib/fa/calendar'
-import {loadNotes, selectCourse, loadAvailCourses}from '../../actions/notes'
+import {loadNotes, selectCourse, loadAvailableCourses}from '../../actions/notes'
 
 import moment from 'moment'
 
@@ -59,7 +59,7 @@ class Notes extends Component {
     }
 
     render() {
-        const notes = this.props.currentNotes || {isFetching: true, responseCode: null};
+        const notes = this.props.notesByCourse[this.props.selectedCourse] || {isFetching: true, responseCode: null};
         const isFetching = notes.isFetching;
         return (
             <div>
@@ -86,14 +86,16 @@ class Notes extends Component {
 }
 
 function mapStateToProps(state) {
-    const {currentNotes, selectedCourse, availableCourses} = state.notes;
-    return {currentNotes, selectedCourse, availableCourses}
+    const {notesByCourse, selectedCourse, availableCourses} = state.notes;
+    return {notesByCourse, selectedCourse, availableCourses}
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         loadNotes: (courseName) =>
             dispatch(loadNotes(courseName)),
+        loadAvailableCourses: () =>
+            dispatch(loadAvailableCourses()),
         selectCourse: (courseName) =>
             dispatch(selectCourse(courseName)),
     }
