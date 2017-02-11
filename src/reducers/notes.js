@@ -14,7 +14,7 @@ const initialState = {
 function notes(state = initialState, action) {
     switch (action.type) {
         case types.SELECT_COURSE:
-            return {...state, notesByCourse: action.course};
+            return {...state, selectedCourse: action.course.course_prefix + action.course.course_three_digits};
 
         case types.NOTES.REQUEST:
         case types.NOTES.SUCCESS:

@@ -18,6 +18,12 @@ class Notes extends Component {
         this.props.loadNotes();
     }
 
+    createCourseOption(course) {
+        return (
+            <option value={course.prefix}>{course.prefix + ' ' + course.three_digits}</option>
+        )
+    }
+
     createNote(note) {
         const semesterDict = {
             'SP': 'Spring',
