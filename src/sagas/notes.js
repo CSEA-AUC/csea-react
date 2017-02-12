@@ -11,12 +11,7 @@ function* loadNotesSaga(action) {
         yield put(actions.courses.success(apiData.data, apiData.status));
 
         // Retrieve list of notes corresponding to the first entry of the availables courses
-        const initialCourse = apiData.data[0];
-        const initialCourseData = {
-            course_prefix: initialCourse.prefix,
-            course_three_digits: initialCourse.three_digits,
-            course_four_digits: initialCourse.four_digits
-        };
+        const initialCourseData = apiData.data[0];
 
         yield put(actions.selectCourse(initialCourseData));
     }
@@ -35,9 +30,18 @@ function* selectCourseSaga(action) {
     try {
         const courseData = action.course;
 
-        const courseName = courseData.course_prefix + courseData.course_three_digits;
+        const courseName = courseData.prefix + courseData.three_digits;
+
+        // notes api of backend expects a certain format for filtering of notes
+        const retrievalCourseData = {
+            course_prefix: courseData.prefix,
+            course_three_digits: courseData.three_digits,
+            course_four_digits: courseData.four_digits
+        };
+
+        console.log(retrievalCourseData);
         yield put(actions.notes.request(courseName));
-        const apiData = yield call(api.fetchResource, 'notes/', courseData);
+        const apiData = yield call(api.fetchResource, 'notes/', retrievalCourseData);
         yield put(actions.notes.success(courseName, apiData.data.results, apiData.status));
     }
     catch (error) {

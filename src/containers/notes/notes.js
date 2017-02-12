@@ -1,27 +1,39 @@
 import React, {Component, PropTypes} from 'react'
 import {Link} from 'react-router'
 import {connect} from 'react-redux'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Grid, Row, Col, ControlLabel, FormControl, Form} from 'react-bootstrap'
 
 import {Banner, Spinner} from '../../components'
 import DownloadIcon from 'react-icons/lib/fa/download'
 import UserIcon from 'react-icons/lib/fa/user'
 import CalendarIcon from 'react-icons/lib/fa/calendar'
-import {loadNotes, selectCourse, loadAvailableCourses}from '../../actions/notes'
+import {loadNotes, selectCourse}from '../../actions/notes'
 
 import moment from 'moment'
 
 import styles from './notes.scss'
 
 class Notes extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleCourseSelection = this.handleCourseSelection.bind(this);
+    }
+
     componentWillMount() {
         this.props.loadNotes();
     }
 
     createCourseOption(course) {
         return (
-            <option value={course.prefix}>{course.prefix + ' ' + course.three_digits}</option>
+            <option key={course.prefix + course.three_digits}
+                    value={JSON.stringify(course)}>{course.prefix + ' ' + course.three_digits}</option>
         )
+    }
+
+    handleCourseSelection(event) {
+        const course = JSON.parse(event.target.value);
+        this.props.selectCourse(course);
     }
 
     createNote(note) {
@@ -67,22 +79,31 @@ class Notes extends Component {
     render() {
         const notes = this.props.notesByCourse[this.props.selectedCourse] || {isFetching: true, responseCode: null};
         const isFetching = notes.isFetching;
+
         return (
             <div>
                 <Banner
                     title="Notes"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                     className={styles.banner}
+                    bottomPadding
                 />
                 <section className={'container ' + styles.mainWrapper}>
-                    <h2>Latest Announcements</h2>
+                    <div className={styles.searchBar}>
+                        <h4>Search</h4>
+                        <Form inline>
+                            <ControlLabel>Course</ControlLabel>
+                            <FormControl componentClass="select" onChange={this.handleCourseSelection}>
+                                {this.props.availableCourses.results.map(this.createCourseOption)}
+                            </FormControl>
+                        </Form>
+                    </div>
                     {isFetching ? <Spinner/> :
                         <ul className={styles.notesList}>
-                            {notes.results.map(this.createNote)}
-                            {notes.results.map(this.createNote)}
-                            {notes.results.map(this.createNote)}
-                            {notes.results.map(this.createNote)}
-                            {notes.results.map(this.createNote)}
+                            {notes.results.length ? notes.results.map(this.createNote) :
+                                <div className={styles.noNotes}>
+                                    No notes were found for this course.
+                                </div>}
                         </ul>
                     }
                 </section>
@@ -100,8 +121,6 @@ function mapDispatchToProps(dispatch) {
     return {
         loadNotes: (courseName) =>
             dispatch(loadNotes(courseName)),
-        loadAvailableCourses: () =>
-            dispatch(loadAvailableCourses()),
         selectCourse: (courseName) =>
             dispatch(selectCourse(courseName)),
     }

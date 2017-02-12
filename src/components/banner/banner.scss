@@ -18,9 +18,11 @@
   background-image: url('./gplaypattern_@2X.png');
   background-repeat: repeat;
 
-  box-shadow: $global-box-shadow;
+  // Default background color
+  background-color: darken($base-green, 5%);
+  background-blend-mode: multiply;
 
-  margin: 0 0 10px 0;
+  margin: 0;
 
   header {
     text-shadow: rgba(0, 0, 0, 0.3) 1px 2px 1px, rgba(0, 0, 0, 0.4) 1px 2px 3px;
@@ -33,7 +35,7 @@
     }
     .subtitle {
       font-size: 1.5em;
-      font-weight: 300;
+      font-weight: 400;
       margin: 10px 0 0;
     }
   }
