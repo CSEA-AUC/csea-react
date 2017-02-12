@@ -11,6 +11,8 @@
 
   padding-top: $navbar-height + 1px;
 
+  padding-bottom: 10px;
+
   color: #EEE;
 
   min-height: 35vh;
@@ -22,7 +24,7 @@
   background-color: darken($base-green, 5%);
   background-blend-mode: multiply;
 
-  margin: 0;
+  margin: 0 0 10px 0;
 
   header {
     text-shadow: rgba(0, 0, 0, 0.3) 1px 2px 1px, rgba(0, 0, 0, 0.4) 1px 2px 3px;

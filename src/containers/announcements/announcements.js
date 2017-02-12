@@ -14,7 +14,6 @@ class Announcements extends Component {
                     title="Announcements"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                     className={styles.banner}
-                    bottomPadding
                 />
                 <section className={styles.mainWrapper}>
                     {this.props.children}

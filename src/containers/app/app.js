@@ -25,7 +25,7 @@ class App extends Component {
                         <Nav className={styles.nav}>
                             <LinkContainer to={'/announcements'}><NavItem eventKey={1}>Announcements</NavItem></LinkContainer>
                             <LinkContainer to={'/notes'}><NavItem eventKey={2}>Notes</NavItem></LinkContainer>
-                            <LinkContainer to={'/team'}><NavItem eventKey={3}>The Team</NavItem></LinkContainer>
+                            <LinkContainer to={'/team'}><NavItem eventKey={3}>Team</NavItem></LinkContainer>
                             <LinkContainer to={'/about'}><NavItem eventKey={4}>About</NavItem></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
@@ -46,8 +46,8 @@ class App extends Component {
                                     <strong>CSEA</strong>
                                     <Link to={'/announcements'}>Announcements</Link>
                                     <Link to={'/notes'}>Notes</Link>
-                                    <Link to={'/about'}>About</Link>
                                     <Link to={'/team'}>Team</Link>
+                                    <Link to={'/about'}>About</Link>
                                 </nav>
                                 <span>
                                     <strong>Contact us at </strong>

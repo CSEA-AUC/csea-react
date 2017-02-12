@@ -7,7 +7,6 @@
 .post {
   background: white;
   padding: 20px;
-  margin-top: -100px;
   margin-bottom: 20px;
   color: $base-black;
 
@@ -15,7 +14,7 @@
     border-bottom: 2px solid darken($base-green, 5%);
     .title {
       margin-top: 0;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 2.5em;
     }
     .subtitle {
@@ -49,6 +48,9 @@
     .content {
       margin-top: 25px;
       font-size: 18px;
+      @media (max-width: 450px) {
+        font-size: 16px;
+      }
     }
     .contentImage {
       margin: 20px auto 0 auto;

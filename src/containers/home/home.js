@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {Image, Grid, Row, Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 
 import {PostList, Spinner} from '../../components/'
 
@@ -33,9 +34,11 @@ class Home extends Component {
                     <Grid fluid>
                         <Row>
                             <Col className={styles.main} md={6} mdOffset={3}>
-                                <header>
-                                    <span>Latest Announcements</span>
-                                    <span>View More Posts</span>
+                                <header className={styles.announcementsHeader}>
+                                    <h3>Announcements</h3>
+                                    <Link to={'announcements/'}>
+                                        <span>View More Posts</span>
+                                    </Link>
                                 </header>
                                 {isFetchingPostList ? <Spinner/> :
                                     <div>

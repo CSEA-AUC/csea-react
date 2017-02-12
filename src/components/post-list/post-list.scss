@@ -8,12 +8,18 @@
   box-shadow: $global-box-shadow;
 
   header {
+    display: block;
     margin-bottom: 7px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba($base-black, .2);
     .title {
-      font-weight: 500;
+      display: inline-block;
+      font-weight: 400;
       margin: 0 0 7px;
+      color: $base-black;
+      &:hover, &:focus {
+        color: $base-green;
+      }
     }
     .subtitle {
       margin: 0;

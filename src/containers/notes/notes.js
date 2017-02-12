@@ -86,7 +86,6 @@ class Notes extends Component {
                     title="Notes"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                     className={styles.banner}
-                    bottomPadding
                 />
                 <section className={'container ' + styles.mainWrapper}>
                     <div className={styles.searchBar}>
