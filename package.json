@@ -6,8 +6,9 @@
   "scripts": {
     "watch": "webpack  --progress --colors --watch --config ./webpack.prod.config.js -p",
     "build": "webpack --config ./webpack.prod.config.js -p",
-    "start": "node ./src/server.jsx",
-    "dev-server": "./node_modules/.bin/webpack-dev-server --inline --hot --config ./webpack.dev.config.js"
+    "start": "node ./src/server.js",
+    "dev-server": "./node_modules/.bin/webpack-dev-server --inline --hot --config ./webpack.dev.config.js",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
