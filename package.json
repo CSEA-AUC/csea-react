@@ -14,6 +14,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
     "axios": "^0.15.3",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
