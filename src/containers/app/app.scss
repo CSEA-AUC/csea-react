@@ -52,7 +52,7 @@
   color: white;
   a {
     margin-right: 10px;
-    color: $grey;
+    color: lighten($grey, 12%);
     &:hover {
       color: lighten($grey, 40%);
     }
@@ -108,7 +108,7 @@
     }
 
     small {
-      color: $grey;
+      color: lighten($grey, 12%);
     }
 
   }
