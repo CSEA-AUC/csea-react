@@ -5,6 +5,10 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var host = (process.env.HOST || 'localhost');
+var port = (+process.env.PORT + 1) || 8080;
+
+
 //the base directory (absolute path) for resolving the entry option
 var projectRootPath = __dirname;
 
@@ -17,7 +21,8 @@ module.exports = {
 
     output: {
         path: path.resolve('./build/'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: 'https://' + host + ':' + port + '/build/'      // Change this to http if testing on local machine
     },
 
     module: {
