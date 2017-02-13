@@ -22,7 +22,8 @@ module.exports = {
     output: {
         path: path.resolve('./build/'),
         filename: "bundle.js",
-        publicPath: 'https://' + host + ':' + port + '/build/'      // Change this to http if testing on local machine
+        publicPath: 'https://csea-react.herokuapp.com/build/'
+        // publicPath: 'http://' + host + ':' + port + '/build/'      // Change this to http if testing on local machine
     },
 
     module: {
