@@ -15,7 +15,11 @@ import {
 } from './containers'
 
 
-const history = syncHistoryWithStore(hashHistory, store);
+let history = syncHistoryWithStore(hashHistory, store);
+
+if (process.env.NODE_ENV === 'production') {
+    history = syncHistoryWithStore(browserHistory, store);
+}
 
 export default (
     <Router history={history}>
