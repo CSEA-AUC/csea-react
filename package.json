@@ -14,10 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-  },
-  "dependencies": {
-    "compression": "^1.6.2",
-    "express": "^4.14.0",
     "axios": "^0.15.3",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
@@ -53,5 +49,9 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.0"
   }
 }
