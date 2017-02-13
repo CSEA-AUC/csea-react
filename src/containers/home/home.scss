@@ -81,10 +81,17 @@
         font-size: 2.0em;
       }
       a {
+        background: $base-green;
+        color: $base-white;
+        padding: 10px;
+        margin-bottom: -10px;
         display: inline-block;
         position: absolute;
         right: 0;
         bottom: 10px;
+        &:hover, &:focus {
+          color: darken($base-white, 5%);
+        }
         @media (max-width: 450px) {
           display: none;
         }
