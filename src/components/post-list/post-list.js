@@ -3,10 +3,13 @@ import {Link} from 'react-router'
 
 import moment from 'moment'
 
+import removeMd from 'remove-markdown'
+
 import UserIcon from 'react-icons/lib/fa/user'
 import CalendarIcon from 'react-icons/lib/fa/calendar'
 import CommentsIcon from 'react-icons/lib/fa/comment-o'
 import RightAngleIcon from 'react-icons/lib/fa/angle-double-right'
+
 import styles from './post-list.scss';
 
 export default class PostList extends Component {
@@ -21,7 +24,7 @@ export default class PostList extends Component {
                     <h5 className={styles.subtitle}>{post.subtitle}</h5>
                 </header>
                 <div className={styles.snippet}>
-                    <span>{post.excerpt}</span>
+                    {removeMd(post.excerpt)}
                 </div>
                 <footer>
                     <span className={styles.postAuthor}><UserIcon/>{post.author}</span>
