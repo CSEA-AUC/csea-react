@@ -72,7 +72,7 @@
   font-size: 16px;
   .main {
     .announcementsHeader {
-      border-bottom: 5px solid $base-green;
+      border-bottom: 5px solid darken($base-green, 10%);
       padding: 0 1px 10px 1px;
       position: relative;
       h3 {
@@ -81,7 +81,7 @@
         font-size: 2.0em;
       }
       a {
-        background: $base-green;
+        background: darken($base-green, 10%);
         color: $base-white;
         padding: 10px;
         margin-bottom: -10px;
