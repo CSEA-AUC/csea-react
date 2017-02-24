@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var host = (process.env.HOST || 'localhost');
 var port = (+process.env.PORT + 1) || 8080;
@@ -78,6 +79,13 @@ module.exports = {
             template: 'template.html',
             inject: 'body'
         }),
+
+        new CopyWebpackPlugin([
+            {
+                from: 'assets/favicon/',
+                to: 'assets/favicon/'
+            }
+        ]),
 
         // optimizations
         new webpack.optimize.DedupePlugin(),
