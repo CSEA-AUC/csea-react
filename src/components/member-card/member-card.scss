@@ -1,0 +1,31 @@
+@import '../../globals';
+
+.card {
+  display: flex;
+  max-width: 100%;
+  width: 290px;
+  //height: 350px;
+  flex-direction: column;
+  padding: 0;
+  background: $base-white;
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  border-radius: .28571429rem;
+  margin: 15px;
+  .content {
+    flex-grow: 1;
+    padding: 1em 1em;
+    margin: 0;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    .name {
+      font-weight: 700;
+      font-size: 1.28571429em;
+      margin-top: -.21425em;
+      margin-bottom: 2px;
+    }
+    .position {
+      font-size: 1em;
+      color: $grey;
+      font-family: 'Quattrocento', serif;
+    }
+  }
+}

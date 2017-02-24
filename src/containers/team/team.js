@@ -1,16 +1,11 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
-import {Grid, Row, Col, ControlLabel, FormControl, Form} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 
-import {Banner, Spinner} from '../../components'
-import DownloadIcon from 'react-icons/lib/fa/download'
-import UserIcon from 'react-icons/lib/fa/user'
-import CalendarIcon from 'react-icons/lib/fa/calendar'
-import {loadNotes, selectCourse}from '../../actions/notes'
-
-import moment from 'moment'
+import {Banner, MemberCard} from '../../components'
 
 import styles from './team.scss'
+import img from './temp_image.png'
 
 export default class Team extends Component {
     render() {
@@ -20,10 +15,23 @@ export default class Team extends Component {
                     title="The Team"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
                 />
-                <section className={styles.mainWrapper}>
-
+                <section className={styles.mainWrapper + ' container'}>
+                    <h1>CSEA '16 - '17</h1>
+                    <div className={styles.presidents}>
+                        <MemberCard name="Sherif 'Gedo' Sorour" position="CSEA President" imageUrl={img}/>
+                        <MemberCard name="Amr Saeid" position="CSEA Vice President" imageUrl={img}/>
+                    </div>
+                    <div className={styles.heads}>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
+                    </div>
                 </section>
             </div>
-    )
+        )
     }
-    }
+}

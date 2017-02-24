@@ -1,0 +1,29 @@
+@import '../../globals';
+
+.mainWrapper {
+  background: $base-white;
+  padding: 5px 20px;
+  box-shadow: $global-box-shadow;
+  h1 {
+    font-weight: 500;
+    border-bottom: 5px solid darken($base-green, 10%);
+    padding: 0 1px 10px 1px;
+    margin-bottom: 20px;
+    @media(max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+  .presidents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .heads {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+}

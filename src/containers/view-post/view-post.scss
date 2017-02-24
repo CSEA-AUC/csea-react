@@ -9,7 +9,7 @@
   padding: 20px;
   margin-bottom: 20px;
   color: $base-black;
-  //box-shadow: $global-box-shadow;
+  box-shadow: $global-box-shadow;
 
   header {
     border-bottom: 2px solid darken($base-green, 5%);
@@ -17,9 +17,15 @@
       margin-top: 0;
       font-weight: 500;
       font-size: 2.5em;
+      @media(max-width: 767px){
+        font-size: 2.3em;
+      }
     }
     .subtitle {
-      color: $grey;
+      font-weight: 400;
+      font-size: 15px;
+      color: lighten($base-black, 30%);
+      font-family: 'Open Sans', sans-serif;
     }
   }
 

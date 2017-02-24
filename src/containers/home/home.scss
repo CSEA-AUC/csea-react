@@ -19,6 +19,9 @@
       text-shadow: 2px 2px 1px rgba(0, 0, 0, .6), 2px 3px 5px rgba(0, 0, 0, .4);
       text-transform: uppercase;
       letter-spacing: 0.02em;
+      @media(max-width: 767px) {
+        font-size: 30px;
+      }
     }
     h4 {
       font-weight: 400;
@@ -31,6 +34,12 @@
     display: inline-block;
     height: 200px;
     width: 200px;
+
+    @media(max-width: 767px) {
+      height: 160px;
+      width: 160px;
+    }
+
     position: relative;
     bottom: $bottom-pos;
     margin-top: $bottom-pos; // Used to prevent relatively position image from taking up unnecessary space
@@ -75,10 +84,14 @@
       border-bottom: 5px solid darken($base-green, 10%);
       padding: 0 1px 10px 1px;
       position: relative;
+      margin-bottom: 10px;
       h3 {
         margin: 0;
         font-weight: 700;
         font-size: 2.0em;
+        @media(max-width: 767px) {
+          font-size: 1.8em;
+        }
       }
       a {
         background: darken($base-green, 10%);

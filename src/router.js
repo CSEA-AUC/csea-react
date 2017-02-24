@@ -11,7 +11,8 @@ import {
     Announcements,
     ListPosts,
     ViewPost,
-    Notes
+    Notes,
+    Team
 } from './containers'
 
 let history = null;
@@ -34,6 +35,7 @@ export default (
             </Route>
             <Route path="notes" component={Notes}/>
             <Route path="about" component={About}/>
+            <Route path="team" component={Team}/>
             {/*<Route path="*" status={404}/>*/}
         </Route>
     </Router>
