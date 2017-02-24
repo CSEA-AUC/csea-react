@@ -7,11 +7,16 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <Banner title="About us" subtitle="All you need to know about current and past CSEA families!"
-                        className={styles.banner}/>
-                <section className={styles.mainWrapper}>
-                    <h1>About us</h1>
-                    <h3>All you need to know about current and past CSEA families!</h3>
+                <Banner
+                    title="About us"
+                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                />
+                <section className={styles.mainWrapper + ' container'}>
+                    <h1>Our Mission</h1>
+                    <div className={styles.missionContent}>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut.</p>
+                    </div>
                 </section>
             </div>
         )
