@@ -127,6 +127,9 @@
 :global(.appWrapper) {
   // padding-bottom = footer height + needed spacing
   padding-bottom: $footer-height + 30px;
+  @media(max-width: 767px) {
+    padding-bottom: $footer-height;
+  }
   background: #EEE;
 }
 
