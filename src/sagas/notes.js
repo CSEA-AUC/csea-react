@@ -39,7 +39,6 @@ function* selectCourseSaga(action) {
             course_four_digits: courseData.four_digits
         };
 
-        console.log(retrievalCourseData);
         yield put(actions.notes.request(courseName));
         const apiData = yield call(api.fetchResource, 'notes/', retrievalCourseData);
         yield put(actions.notes.success(courseName, apiData.data.results, apiData.status));

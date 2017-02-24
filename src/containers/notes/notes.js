@@ -26,7 +26,7 @@ class Notes extends Component {
     createCourseOption(course) {
         return (
             <option key={course.prefix + course.three_digits}
-                    value={JSON.stringify(course)}>{course.prefix + ' ' + course.three_digits}</option>
+                    value={JSON.stringify(course)}>{course.prefix + ' ' + course.three_digits + ' - ' + course.title}</option>
         )
     }
 

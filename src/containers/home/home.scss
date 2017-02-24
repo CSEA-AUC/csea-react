@@ -72,7 +72,7 @@
   font-size: 16px;
   .main {
     .announcementsHeader {
-      border-bottom: 5px solid $base-green;
+      border-bottom: 5px solid darken($base-green, 10%);
       padding: 0 1px 10px 1px;
       position: relative;
       h3 {
@@ -81,10 +81,17 @@
         font-size: 2.0em;
       }
       a {
+        background: darken($base-green, 10%);
+        color: $base-white;
+        padding: 10px;
+        margin-bottom: -10px;
         display: inline-block;
         position: absolute;
         right: 0;
         bottom: 10px;
+        &:hover, &:focus {
+          color: darken($base-white, 5%);
+        }
         @media (max-width: 450px) {
           display: none;
         }

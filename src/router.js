@@ -14,12 +14,15 @@ import {
     Notes
 } from './containers'
 
-
-let history = syncHistoryWithStore(hashHistory, store);
+let history = null;
 
 if (process.env.NODE_ENV === 'production') {
     history = syncHistoryWithStore(browserHistory, store);
 }
+else {
+    history = syncHistoryWithStore(hashHistory, store);
+}
+
 
 export default (
     <Router history={history}>
