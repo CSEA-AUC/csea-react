@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
-import {Link} from 'react-router'
 import {connect} from 'react-redux'
-import {Grid, Row, Col, ControlLabel, FormControl, Form} from 'react-bootstrap'
+import {ControlLabel, FormControl, Form} from 'react-bootstrap'
 
 import {Banner, Spinner} from '../../components'
 import DownloadIcon from 'react-icons/lib/fa/download'
