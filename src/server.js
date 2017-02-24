@@ -17,13 +17,19 @@ app.use(compression());
 // serve static assets normally
 app.use('/build', publicPath);
 
-// Middleware that forces https
-app.use(function (req, res, next) {
-    if (req.header['x-forwarded-proto'] != 'https')
-        res.redirect('https://' + req.headers['host'] + req.url);
-    else
-        next()
-});
+var https_redirect = function(req, res, next) {
+    if (process.env.NODE_ENV === 'production') {
+        if (req.headers['x-forwarded-proto'] != 'https') {
+            return res.redirect('https://' + req.headers.host + req.url);
+        } else {
+            return next();
+        }
+    } else {
+        return next();
+    }
+};
+
+app.use(https_redirect);
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
