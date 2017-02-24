@@ -7,6 +7,7 @@ const compression = require('compression');
 const indexPath = path.join(__dirname, '../index.html');
 const publicPath = express.static(path.join(__dirname, '../build'));
 
+
 // Middleware that compresses responses
 // Note that this wastes CPU time as compression occurs on every response
 // a better implemention would be to compress bundle.js in webpack and serve that
@@ -15,6 +16,14 @@ app.use(compression());
 
 // serve static assets normally
 app.use('/build', publicPath);
+
+// Middleware that forces https
+app.use(function (req, res, next) {
+    if (req.header['x-forwarded-proto'] != 'https')
+        res.redirect('https://' + req.headers['host'] + req.url);
+    else
+        next()
+});
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
