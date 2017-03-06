@@ -62,7 +62,7 @@ module.exports = {
         // this was to avoid needing to change the directory of bundle.js when switching from development to production
         // and vice-versa
         new HtmlWebpackPlugin({
-            template: 'template.html',
+            template: 'dev.html',
             inject: 'body'
         }),
 
