@@ -1,0 +1,88 @@
+@import '../../globals';
+
+.banner {
+  background-color: darken($base-green, 5%);
+  background-blend-mode: multiply;
+}
+
+.mainWrapper {
+  background: $base-white;
+  padding: 5px 20px;
+  box-shadow: $global-box-shadow;
+  .mainBar {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba($base-black, .2);
+    margin-bottom: 15px;
+    .createGroupButton {
+      border-radius: 0;
+    }
+    h4 {
+      font-weight: 300;
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    label {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+}
+.groupWrapper {
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba($base-black, .2);
+  margin-bottom: 25px;
+  header {
+    overflow: hidden;
+    margin-bottom: 10px;
+    .ideaTitle{
+      display: inline-block;
+      margin: 0;
+    }
+    .joinGroupButton{
+      display: inline-block;
+      float: right;
+      clear: both;
+      border-radius: 0;
+      @media (max-width: 767px) {
+        margin-top: 10px;
+        float: none;
+        clear: none;
+      }
+    }
+  }
+  p {
+    font-weight: 300;
+  }
+  .groupMembersWrapper {
+    text-align: center;
+    ul {
+      padding: 0;
+    }
+    li {
+      text-decoration: none;
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+}
+.groupsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style-type: none;
+  font-size: 16px;
+  padding: 0;
+  min-height: 25vh;
+
+  .noGroups {
+    display: inline-block;
+    font-size: 35px;
+    font-weight: 100;
+    align-self: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}

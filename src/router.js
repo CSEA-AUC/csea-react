@@ -12,7 +12,8 @@ import {
     ListPosts,
     ViewPost,
     Notes,
-    Team
+    Team,
+    Alexa
 } from './containers'
 
 let history = null;
@@ -36,6 +37,7 @@ export default (
             <Route path="notes" component={Notes}/>
             <Route path="about" component={About}/>
             <Route path="team" component={Team}/>
+            <Route path="alexa" component={Alexa}/>
             {/*<Route path="*" status={404}/>*/}
         </Route>
     </Router>

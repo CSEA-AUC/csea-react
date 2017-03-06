@@ -7,4 +7,4 @@ export {default as ListPosts} from './list-posts/list-posts'
 export {default as ViewPost} from './view-post/view-post'
 export {default as Notes} from './notes/notes'
 export {default as Team} from './team/team'
-
+export {default as Alexa} from './alexa/alexa'
