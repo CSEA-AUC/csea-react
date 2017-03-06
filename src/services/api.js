@@ -11,3 +11,9 @@ export function fetchResource(endpoint, params = {}) {
     params = {params};
     return Axios.get(fullUrl, params)
 }
+
+export function postForm(endpoint, data) {
+    const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
+
+    return Axios.post(fullUrl, data)
+}
