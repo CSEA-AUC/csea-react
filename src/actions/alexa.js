@@ -23,7 +23,7 @@ export const joinAlexaGroup = {
 };
 
 export const JOIN_ALEXAGROUP_SAGA = 'JOIN_ALEXAGROUP_SAGA';
-export const joinAlexaGroupSaga = () => action(JOIN_ALEXAGROUP_SAGA);
+export const joinAlexaGroupSaga = (uid, formData) => action(JOIN_ALEXAGROUP_SAGA, {uid, formData});
 
 export const CREATE_ALEXAGROUP = createRequestTypes('CREATE_ALEXAGROUP');
 
@@ -34,7 +34,7 @@ export const createAlexaGroup = {
 };
 
 export const CREATE_ALEXAGROUP_SAGA = 'CREATE_ALEXAGROUP_SAGA';
-export const createAlexaGroupSaga = action(CREATE_ALEXAGROUP_SAGA);
+export const createAlexaGroupSaga = (formData) => action(CREATE_ALEXAGROUP_SAGA, {formData});
 
 export const SHOW_GROUP_CREATE_MODAL = 'SHOW_GROUP_CREATE_MODAL';
 export const showGroupCreateModal = () => action(SHOW_GROUP_CREATE_MODAL);
