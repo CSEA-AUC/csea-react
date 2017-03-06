@@ -11,9 +11,6 @@ export const loadAlexaGroups = {
 };
 
 
-export const LOAD_ALEXAGROUPS_SAGA = 'LOAD_ALEXAGROUPS';
-export const loadAlexaGroupsSaga = () => action(LOAD_ALEXAGROUPS_SAGA);
-
 export const JOIN_ALEXAGROUP = createRequestTypes('JOIN_ALEXAGROUP');
 
 export const joinAlexaGroup = {
@@ -22,8 +19,6 @@ export const joinAlexaGroup = {
     failure: (errorCode) => action(JOIN_ALEXAGROUP.FAILURE, {errorCode})
 };
 
-export const JOIN_ALEXAGROUP_SAGA = 'JOIN_ALEXAGROUP_SAGA';
-export const joinAlexaGroupSaga = (uid, formData) => action(JOIN_ALEXAGROUP_SAGA, {uid, formData});
 
 export const CREATE_ALEXAGROUP = createRequestTypes('CREATE_ALEXAGROUP');
 
@@ -33,8 +28,6 @@ export const createAlexaGroup = {
     failure: (errorCode) => action(CREATE_ALEXAGROUP.FAILURE, {errorCode})
 };
 
-export const CREATE_ALEXAGROUP_SAGA = 'CREATE_ALEXAGROUP_SAGA';
-export const createAlexaGroupSaga = (formData) => action(CREATE_ALEXAGROUP_SAGA, {formData});
 
 export const SHOW_GROUP_CREATE_MODAL = 'SHOW_GROUP_CREATE_MODAL';
 export const showGroupCreateModal = () => action(SHOW_GROUP_CREATE_MODAL);
@@ -47,4 +40,14 @@ export const hideGroupCreateModal = () => action(HIDE_GROUP_CREATE_MODAL);
 
 export const HIDE_GROUP_JOIN_MODAL = 'HIDE_GROUP_JOIN_MODAL';
 export const hideGroupJoinModal = () => action(HIDE_GROUP_JOIN_MODAL);
+
+// Saga actions
+export const LOAD_ALEXAGROUPS_SAGA = 'LOAD_ALEXAGROUPS_SAGA';
+export const loadAlexaGroupsSaga = () => action(LOAD_ALEXAGROUPS_SAGA);
+
+export const JOIN_ALEXAGROUP_SAGA = 'JOIN_ALEXAGROUP_SAGA';
+export const joinAlexaGroupSaga = (uid, formData) => action(JOIN_ALEXAGROUP_SAGA, {uid, formData});
+
+export const CREATE_ALEXAGROUP_SAGA = 'CREATE_ALEXAGROUP_SAGA';
+export const createAlexaGroupSaga = (formData) => action(CREATE_ALEXAGROUP_SAGA, {formData});
 

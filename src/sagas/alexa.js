@@ -10,7 +10,6 @@ function* loadAlexaGroupsSaga(action) {
         yield put(actions.loadAlexaGroups.request());
 
         let apiData = yield call(api.fetchResource, 'alexagroups/');
-
         yield put(actions.loadAlexaGroups.success(apiData.data, apiData.status));
     }
 
