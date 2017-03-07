@@ -23,18 +23,19 @@
     // For amazon alexa hackathon link
     li:last-child > a {
       color: #ff9900;
-      animation: amazon-pulse 1s alternate infinite;
+      animation: amazon-pulse 1s alternate cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
       @keyframes amazon-pulse {
         0% {
-          color: lighten(#ff9900, 10%);
+          color: lighten(#ff9900, 5%);
         }
         100% {
-          color: darken(#ff9900, 5%);
+          color: darken(#ff9900, 7%);
         }
       }
       &:hover, &:focus {
         background: none;
         color: darken(#ff9900, 5%);
+        animation: none;
       }
     }
     :global(.active) > a {
@@ -43,7 +44,6 @@
       &:hover, &:focus {
         background: none;
         color: darken($base-green, 5%);
-
       }
     }
   }
