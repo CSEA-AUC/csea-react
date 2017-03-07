@@ -29,7 +29,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
+                loaders: ['react-hot-loader/webpack', 'babel']
             },
             {
                 test: /\.css$/,
