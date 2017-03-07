@@ -1,6 +1,6 @@
 import {takeEvery, put, call, fork} from 'redux-saga/effects'
 import * as actions from '../actions/alexa'
-import * as api from '../services/api'
+import * as api from '../utils/api'
 
 
 // Load Alexa Groups Saga

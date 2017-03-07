@@ -1,6 +1,6 @@
 import {takeEvery, put, call, fork, select} from 'redux-saga/effects'
 import * as actions from '../actions/notes'
-import * as api from '../services/api'
+import * as api from '../utils/api'
 
 // Load Notes Saga
 function* loadNotesSaga(action) {

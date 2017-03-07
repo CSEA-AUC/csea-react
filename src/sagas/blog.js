@@ -1,6 +1,6 @@
 import {takeEvery, put, call, fork, select} from 'redux-saga/effects'
 import * as actions from '../actions/blog'
-import * as api from '../services/api'
+import * as api from '../utils/api'
 
 // Subroutines
 // TODO: Check if posts were cached or not in subroutines
