@@ -1,23 +1,5 @@
 import * as types from '../actions/alexa'
 
-const initialGroupForm = {
-    name: '',
-    email: '',
-    mobile: '',
-    major: '',
-    standing: '',
-};
-
-const initialMemberForm = {
-    name: '',
-    email: '',
-    mobile: '',
-    major: '',
-    standing: '',
-    ideaTitle: '',
-    ideaDescription: ''
-};
-
 const initialState = {
     joinGroupModal: {
         show: false,
