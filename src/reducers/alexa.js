@@ -1,7 +1,5 @@
 import * as types from '../actions/alexa'
-import {combineForms} from 'react-redux-form'
 
-// Change currentNotes to notesbycourse
 const initialGroupForm = {
     name: '',
     email: '',
@@ -25,17 +23,11 @@ const initialState = {
         show: false,
         isPosting: false,
         responseCode: null,
-        ...combineForms({
-            memberForm: initialMemberForm
-        }, 'alexa.joinGroupModal'),
     },
     createGroupModal: {
         show: false,
         isPosting: false,
         responseCode: null,
-        ...combineForms({
-            groupForm: initialGroupForm
-        }, 'alexa.createGroupModal'),
     },
     alexaGroups: {
         isFetching: true,

@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
+import {reducer as formReducer} from 'redux-form'
 
 import blog from './blog'
 import notes from './notes'
@@ -9,5 +10,6 @@ export default combineReducers({
     blog,
     notes,
     alexa,
-    routing: routerReducer
+    routing: routerReducer,
+    form: formReducer
 })
