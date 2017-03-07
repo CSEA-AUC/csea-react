@@ -27,6 +27,7 @@ class App extends Component {
                             <LinkContainer to={'/notes'}><NavItem eventKey={2}>Notes</NavItem></LinkContainer>
                             <LinkContainer to={'/team'}><NavItem eventKey={3}>Team</NavItem></LinkContainer>
                             <LinkContainer to={'/about'}><NavItem eventKey={4}>About</NavItem></LinkContainer>
+                            <LinkContainer to={'/alexahackathon'}><NavItem eventKey={5}>Alexa Hackathon</NavItem></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

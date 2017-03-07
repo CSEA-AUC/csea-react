@@ -20,12 +20,30 @@
         color: darken($base-green, 5%);
       }
     }
+    // For amazon alexa hackathon link
+    li:last-child > a {
+      color: #ff9900;
+      animation: amazon-pulse 1s alternate infinite;
+      @keyframes amazon-pulse {
+        0% {
+          color: lighten(#ff9900, 10%);
+        }
+        100% {
+          color: darken(#ff9900, 5%);
+        }
+      }
+      &:hover, &:focus {
+        background: none;
+        color: darken(#ff9900, 5%);
+      }
+    }
     :global(.active) > a {
       background: none;
       color: darken($base-green, 5%);
-      &:hover, &:focus{
+      &:hover, &:focus {
         background: none;
         color: darken($base-green, 5%);
+
       }
     }
   }
@@ -134,7 +152,7 @@
 }
 
 :global(svg) {
-  vertical-align: text-top !important;    // Needed to override inline-styling from react-icons
+  vertical-align: text-top !important; // Needed to override inline-styling from react-icons
   display: inline-block;
 }
 
