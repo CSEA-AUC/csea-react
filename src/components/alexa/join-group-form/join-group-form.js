@@ -28,7 +28,7 @@ class JoinGroupForm extends Component {
                 <div>
                     <Field name="standing" component={FormInput} label="Standing" componentClass="select"
                            validate={required}>
-                        <option disabled selected value/>
+                        <option disabled/>
                         <option value="freshman">Freshman</option>
                         <option value="sophomore">Sophomore</option>
                         <option value="junior">Junior</option>

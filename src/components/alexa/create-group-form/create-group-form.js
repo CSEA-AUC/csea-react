@@ -7,7 +7,6 @@ import {AUCEmailInput, FormInput} from '../../index'
 
 class CreateGroupForm extends Component {
     render() {
-        console.log(this.props);
         const {handleSubmit, submitting, valid, submitForm, ideaDescriptionValue} = this.props;
         return (
             <form onSubmit={handleSubmit(submitForm)}>
@@ -30,7 +29,7 @@ class CreateGroupForm extends Component {
                 <div>
                     <Field name="standing" component={FormInput} label="Standing" componentClass="select"
                            validate={required}>
-                        <option disabled selected value/>
+                        <option disabled/>
                         <option value="freshman">Freshman</option>
                         <option value="sophomore">Sophomore</option>
                         <option value="junior">Junior</option>
