@@ -44,8 +44,17 @@ const group = [
 ];
 
 class Alexa extends Component {
+    constructor(props){
+        super(props);
+        this.handleCreateGroupSubmit = this.handleCreateGroupSubmit.bind(this);
+    }
+
     componentWillMount() {
         this.props.loadAlexaGroupsSaga();
+    }
+
+    handleCreateGroupSubmit(values) {
+        console.log(values);
     }
 
     createAlexaGroup(group) {
@@ -63,7 +72,7 @@ class Alexa extends Component {
                     <ul>
                         <li className={styles.groupMember}>{group.inventor_name}</li>
                         {group.members.map((member) => {
-                            return (<li className={styles.groupMember}>{member}</li>)
+                            return (<li key={member.id} className={styles.groupMember}>{member}</li>)
                         })
                         }
                     </ul>
@@ -83,7 +92,7 @@ class Alexa extends Component {
                         <Modal.Title>Create a Team!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <CreateGroupForm/>
+                        <CreateGroupForm submitForm={this.handleCreateGroupSubmit}/>
                     </Modal.Body>
                 </Modal>
                 <Banner
