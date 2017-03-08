@@ -95,7 +95,7 @@ class Alexa extends Component {
 
                 <Banner
                     title="Amazon Alexa Hackaton Registration"
-                    subtitle="Unleash Your Inner Developer!"
+                    subtitle="Unleash your inner developer!"
                     className={styles.banner}
                 />
                 <section className={'container ' + styles.mainWrapper}>
