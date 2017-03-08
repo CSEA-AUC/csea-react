@@ -1,7 +1,7 @@
 import {SubmissionError} from 'redux-form'
 
 import {postForm} from './api'
-import {hideGroupCreateModal} from '../actions/alexa'
+import {hideGroupCreateModal, hideGroupJoinModal} from '../actions/alexa'
 
 function submitCreateGroupForm(values, dispatch) {
     return postForm('alexa/groups/', values)
@@ -11,4 +11,12 @@ function submitCreateGroupForm(values, dispatch) {
         })
 }
 
-export default submitCreateGroupForm
+function submitJoinGroupForm(values, dispatch) {
+    return postForm('alexa/groups/', values)
+        .then((response) => dispatch(hideGroupJoinModal()))
+        .catch((error) => {
+            throw new SubmissionError({...error.response.data, _error: 'Failed to join group'})
+        })
+}
+
+export default {submitCreateGroupForm, submitJoinGroupForm}

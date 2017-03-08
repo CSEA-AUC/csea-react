@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {ControlLabel, FormControl, Form, Button, Modal, Image} from 'react-bootstrap'
 import {hasSubmitSucceeded} from 'redux-form'
 
-import {Banner, Spinner, CreateGroupForm} from '../../components'
+import {Banner, Spinner, CreateGroupForm, Jo} from '../../components'
 
 import {
     loadAlexaGroupsSaga,
@@ -18,11 +18,6 @@ import {
 import styles from './alexa.scss'
 
 class Alexa extends Component {
-    constructor(props) {
-        super(props);
-        this.handleCreateGroupSubmit = this.handleCreateGroupSubmit.bind(this);
-    }
-
     componentWillMount() {
         this.props.loadAlexaGroupsSaga();
     }
@@ -31,10 +26,6 @@ class Alexa extends Component {
         const updateGroups = this.props.createGroupSubmitSucceeded || this.props.joinGroupSubmitSucceeded;
         if (updateGroups)
             props.loadAlexaGroupsSaga();
-    }
-
-    handleCreateGroupSubmit(values) {
-        this.props.createAlexaGroupSaga(values);
     }
 
     createAlexaGroup(group) {
@@ -66,6 +57,7 @@ class Alexa extends Component {
         const isFetching = alexaGroups.isFetching;
         const responseCode = alexaGroups.responseCode;
         const showCreateGroupModal = this.props.createGroupModal.show;
+        const showJoinGroupModal = this.props.joinGroupModal.show;
 
         return (
             <div>
@@ -74,9 +66,19 @@ class Alexa extends Component {
                         <Modal.Title>Create a Team!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                            <CreateGroupForm/>
+                        <CreateGroupForm/>
                     </Modal.Body>
                 </Modal>
+
+                <Modal show={showJoinGroupModal} onHide={this.props.hideGroupJoinModal} backdrop="static">
+                    <Modal.Header closeButton>
+                        <Modal.Title>Join a Team!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <CreateGroupForm/>
+                    </Modal.Body>
+                </Modal>
+
                 <Banner
                     title="Amazon Alexa Hackaton Registration"
                     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
@@ -84,8 +86,9 @@ class Alexa extends Component {
                 />
                 <section className={'container ' + styles.mainWrapper}>
                     <div className={styles.mainBar}>
-                        <Button className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>Create a
-                            Team</Button>
+                        <Button className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>
+                            Create a Team
+                        </Button>
                     </div>
                     {isFetching ? <Spinner/> :
                         <ul className={styles.groupsList}>

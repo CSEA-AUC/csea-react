@@ -3,22 +3,23 @@ import {Field, reduxForm} from 'redux-form';
 import {Button} from 'react-bootstrap'
 import {required, aucEmail, maxLength50, minLength3, mobileNumber} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
+import submitJoinGroupForm from '../../../utils/form-submissions'
 
 class JoinGroupForm extends Component {
     render() {
-        const {handleSubmit, submitting, valid, submitForm} = this.props;
+        const {handleSubmit, submitting, valid} = this.props;
         return (
-            <form onSubmit={handleSubmit(submitForm)}>
+            <form onSubmit={handleSubmit(submitJoinGroupForm)}>
                 <div>
                     <Field name="name" component={FormInput} label="Full Name"
                            validate={[required, maxLength50, minLength3]}/>
                 </div>
                 <div>
-                    <Field name="aucEmail" component={AUCEmailInput} label="AUC Email"
+                    <Field name="email" component={AUCEmailInput} label="AUC Email"
                            validate={[required, maxLength50, minLength3, aucEmail]}/>
                 </div>
                 <div>
-                    <Field name="mobile" component={FormInput} label="Mobile Number"
+                    <Field name="phone" component={FormInput} label="Mobile Number"
                            validate={[required, mobileNumber]}/>
                 </div>
                 <div>
@@ -36,9 +37,16 @@ class JoinGroupForm extends Component {
                     </Field>
                 </div>
                 <div>
-                    <Button type="submit" bsStyle="primary" disabled={submitting || !valid}>Submit</Button>
+                    <Button type="submit" bsStyle="primary" disabled={submitting || !valid}> {submitting ? 'Submitting...' : 'Submit'}</Button>
                 </div>
             </form>
         )
     }
 }
+
+// Decorate the form component
+JoinGroupForm = reduxForm({
+    form: 'joinGroupForm',
+})(JoinGroupForm);
+
+export default JoinGroupForm;
