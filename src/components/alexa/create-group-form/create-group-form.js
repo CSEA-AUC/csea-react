@@ -15,11 +15,11 @@ class CreateGroupForm extends Component {
                            validate={[required, maxLength50, minLength3]}/>
                 </div>
                 <div>
-                    <Field name="aucEmail" component={AUCEmailInput} label="AUC Email"
+                    <Field name="email" component={AUCEmailInput} label="AUC Email"
                            validate={[required, maxLength50, minLength3, aucEmail]}/>
                 </div>
                 <div>
-                    <Field name="mobile" component={FormInput} label="Mobile Number"
+                    <Field name="phone" component={FormInput} label="Mobile Number"
                            validate={[required, mobileNumber]}/>
                 </div>
                 <div>
@@ -30,18 +30,18 @@ class CreateGroupForm extends Component {
                     <Field name="standing" component={FormInput} label="Standing" componentClass="select"
                            validate={required}>
                         <option disabled/>
-                        <option value="freshman">Freshman</option>
-                        <option value="sophomore">Sophomore</option>
-                        <option value="junior">Junior</option>
-                        <option value="senior">Senior</option>
+                        <option value="FR">Freshman</option>
+                        <option value="SO">Sophomore</option>
+                        <option value="JR">Junior</option>
+                        <option value="SR">Senior</option>
                     </Field>
                 </div>
                 <div>
-                    <Field name="ideaTitle" component={FormInput} label="Idea Title"
+                    <Field name="idea_title" component={FormInput} label="Idea Title"
                            validate={[required, maxLength50, minLength3]}/>
                 </div>
                 <div>
-                    <Field name="ideaDescription" component={FormInput} label="Idea Description" componentClass="textarea"
+                    <Field name="idea_description" component={FormInput} label="Idea Description" componentClass="textarea"
                            validate={[required, maxLength200, minLength3]}/>
                     {ideaDescriptionValue && <small style={{float:'right', clear: 'both', display: 'inline-block'}}>{ideaDescriptionValue.length}/200</small>}
                 </div>
@@ -63,7 +63,7 @@ const selector = formValueSelector('createGroupForm'); // <-- same as form name
 
 CreateGroupForm = connect(
     state => {
-        const ideaDescriptionValue = selector(state, 'ideaDescription');
+        const ideaDescriptionValue = selector(state, 'idea_description');
         return {ideaDescriptionValue}
     }
 )(CreateGroupForm);

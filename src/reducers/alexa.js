@@ -75,7 +75,7 @@ function alexaGroupsReducer(state = initialState, action) {
         case types.LOAD_ALEXAGROUPS.REQUEST:
             return {...state, isFetching: true, responseCode: null, results: []};
         case types.LOAD_ALEXAGROUPS.SUCCESS:
-            return {...state, isFetching: false, responseCode: action.responseCode, result: action.groups};
+            return {...state, isFetching: false, responseCode: action.responseCode, results: action.groups};
         case types.LOAD_ALEXAGROUPS.FAILURE:
             return {...state, isFetching: false, responseCode: action.errorCode}
     }

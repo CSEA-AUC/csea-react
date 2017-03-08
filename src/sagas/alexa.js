@@ -9,12 +9,12 @@ function* loadAlexaGroupsSaga(action) {
         // load list of available courses
         yield put(actions.loadAlexaGroups.request());
 
-        let apiData = yield call(api.fetchResource, 'alexagroups/');
+        let apiData = yield call(api.fetchResource, 'alexa/groups/');
         yield put(actions.loadAlexaGroups.success(apiData.data, apiData.status));
     }
 
     catch (error) {
-        yield put(actions.loadAlexaGroups.failure(error.status));
+        yield put(actions.loadAlexaGroups.failure(error.response.status));
     }
 }
 
@@ -26,11 +26,14 @@ function* watchLoadAlexaGroups() {
 function* createAlexaGroupeSaga(action) {
     try {
         yield put(actions.createAlexaGroup.request());
-        const apiData = yield call(api.postForm, 'alexagroups/', action.formData);
+        const apiData = yield call(api.postForm, 'alexa/groups/', action.formData);
+        console.log(apiData);
         yield put(actions.joinAlexaGroup.success(apiData.status));
+        yield put(actions.loadAlexaGroupsSaga());
+        yield put(actions.hideGroupCreateModal())
     }
     catch (error) {
-        yield put(actions.joinAlexaGroup.failure(error.status));
+        yield put(actions.joinAlexaGroup.failure(error.response.status));
     }
 }
 
@@ -42,11 +45,11 @@ function* watchCreateAlexaGroup() {
 function* joinAlexaGroupSaga(action) {
     try {
         yield put(actions.joinAlexaGroup.request());
-        const apiData = yield call(api.postForm, 'alexagroups/' + action.uid + '/', action.formData);
+        const apiData = yield call(api.postForm, 'alexa/groups/' + action.uid + '/', action.formData);
         yield put(actions.joinAlexaGroup.success(apiData.status));
     }
     catch (error) {
-        yield put(actions.joinAlexaGroup.failure(error.status));
+        yield put(actions.joinAlexaGroup.failure(error.response.status));
     }
 }
 

@@ -16,33 +16,6 @@ import {
 
 import styles from './alexa.scss'
 
-const group = [
-    {
-        id: 1,
-        title: 'Who am i whats my name',
-        description: 'I AM WHO I AM I SEE WHO I SEE THIS IS WHO I AMMMMMMM THIS IS REALLY LONG PSOT ABOUT A DESCRIPTION THAT I DONT KNOW ABOUT OK IOJW IEOQWBNEQWU IEBQWYOPEQW',
-        inventor_name: 'Shady Fanous',
-        inventor_email: 'shady-fanous@aucegypt.edu',
-        members: ['Hossam Hassan', "Who is this", "another random dude", "sdbqweqw"]
-    },
-    {
-        id: 2,
-        title: 'Who am i whats my name',
-        description: 'I AM WHO I AM I SEE WHO I SEE THIS IS WHO I AMMMMMMM THIS IS REALLY LONG PSOT ABOUT A DESCRIPTION THAT I DONT KNOW ABOUT OK IOJW IEOQWBNEQWU IEBQWYOPEQW',
-        inventor_name: 'Shady Fanous',
-        inventor_email: 'shady-fanous@aucegypt.edu',
-        members: ['Hossam Hassan', "Who is this", "another random dude", "sdbqweqw"]
-    },
-    {
-        id: 3,
-        title: 'Who am i whats my name',
-        description: 'I AM WHO I AM I SEE WHO I SEE THIS IS WHO I AMMMMMMM THIS IS REALLY LONG PSOT ABOUT A DESCRIPTION THAT I DONT KNOW ABOUT OK IOJW IEOQWBNEQWU IEBQWYOPEQW',
-        inventor_name: 'Shady Fanous',
-        inventor_email: 'shady-fanous@aucegypt.edu',
-        members: ['Hossam Hassan', "Who is this", "another random dude"]
-    }
-];
-
 class Alexa extends Component {
     constructor(props){
         super(props);
@@ -54,25 +27,25 @@ class Alexa extends Component {
     }
 
     handleCreateGroupSubmit(values) {
-        console.log(values);
+        this.props.createAlexaGroupSaga(values);
     }
 
     createAlexaGroup(group) {
         return (
             <section key={group.id} className={styles.groupWrapper}>
                 <header>
-                    <h2 className={styles.ideaTitle}>{group.title}</h2>
+                    <h2 className={styles.ideaTitle}>{group.idea_title}</h2>
                     <Button className={styles.joinGroupButton} disabled={group.members.length >= 4}>
-                        {group.members.length >= 4 ? 'Team is Full' : 'Join Team'}
+                        {group.members.length >= 5 ? 'Team is Full' : 'Join Team'}
                     </Button>
                 </header>
-                <p className={styles.ideaDescription}>{group.description}</p>
+                <p className={styles.ideaDescription}>{group.idea_description}</p>
                 <div className={styles.groupMembersWrapper}>
-                    <h4>Team Members ({group.members.length + 1}/5)</h4>
+                    <h4>Team Members ({group.members.length}/5)</h4>
                     <ul>
-                        <li className={styles.groupMember}>{group.inventor_name}</li>
+                        {/*<li className={styles.groupMember}>{group.inventor_name}</li>*/}
                         {group.members.map((member) => {
-                            return (<li key={member.id} className={styles.groupMember}>{member}</li>)
+                            return (<li key={member.id} className={styles.groupMember}>{member.name}</li>)
                         })
                         }
                     </ul>
@@ -84,6 +57,7 @@ class Alexa extends Component {
     render() {
         const alexaGroups = this.props.alexaGroups;
         const isFetching = alexaGroups.isFetching;
+        const responseCode = alexaGroups.responseCode;
         const showCreateGroupModal = this.props.createGroupModal.show;
         return (
             <div>
@@ -106,11 +80,10 @@ class Alexa extends Component {
                     </div>
                     {isFetching ? <Spinner/> :
                         <ul className={styles.groupsList}>
-                            {group.map(this.createAlexaGroup)}
-                            {/*{alexaGroups.results.length ? alexaGroups.results.map(this.createAlexaGroup) :*/}
-                            {/*<div className={styles.noGroups}>*/}
-                            {/*No groups were formed yet. Be the first!*/}
-                            {/*</div>}*/}
+                            {alexaGroups.results.length ? alexaGroups.results.map(this.createAlexaGroup) :
+                                <div className={styles.noGroups}>
+                                    No groups were formed yet. Be the first!
+                                </div>}
                         </ul>
                     }
                 </section>
