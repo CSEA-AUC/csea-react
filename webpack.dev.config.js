@@ -16,6 +16,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
+        'react-hot-loader/patch',
         './src/index'],
 
     output: {
