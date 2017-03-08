@@ -4,12 +4,13 @@ import {Field, reduxForm, formValueSelector} from 'redux-form';
 import {Button} from 'react-bootstrap'
 import {required, aucEmail, maxLength50, minLength3, maxLength200, mobileNumber} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
+import submitCreateGroupForm from '../../../utils/form-submissions'
 
 class CreateGroupForm extends Component {
     render() {
-        const {handleSubmit, submitting, valid, submitForm, ideaDescriptionValue} = this.props;
+        const {handleSubmit, submitting, valid, ideaDescriptionValue} = this.props;
         return (
-            <form onSubmit={handleSubmit(submitForm)}>
+            <form onSubmit={handleSubmit(submitCreateGroupForm)}>
                 <div>
                     <Field name="name" component={FormInput} label="Full Name"
                            validate={[required, maxLength50, minLength3]}/>
@@ -46,7 +47,7 @@ class CreateGroupForm extends Component {
                     {ideaDescriptionValue && <small style={{float:'right', clear: 'both', display: 'inline-block'}}>{ideaDescriptionValue.length}/200</small>}
                 </div>
                 <div>
-                    <Button type="submit" bsStyle="primary" disabled={submitting || !valid}>Submit</Button>
+                    <Button type="submit" bsStyle="primary" disabled={submitting || !valid}> {submitting ? 'Submitting...' : 'Submit'}</Button>
                 </div>
             </form>
         )

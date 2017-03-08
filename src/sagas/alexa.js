@@ -28,12 +28,11 @@ function* createAlexaGroupeSaga(action) {
         yield put(actions.createAlexaGroup.request());
         const apiData = yield call(api.postForm, 'alexa/groups/', action.formData);
         console.log(apiData);
-        yield put(actions.joinAlexaGroup.success(apiData.status));
+        yield put(actions.createAlexaGroup.success(apiData.status));
         yield put(actions.loadAlexaGroupsSaga());
-        yield put(actions.hideGroupCreateModal())
     }
     catch (error) {
-        yield put(actions.joinAlexaGroup.failure(error.response.status));
+        yield put(actions.createAlexaGroup.failure(error.response.status));
     }
 }
 

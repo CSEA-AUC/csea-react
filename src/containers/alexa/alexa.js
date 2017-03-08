@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {ControlLabel, FormControl, Form, Button, Modal, Image} from 'react-bootstrap'
+import {hasSubmitSucceeded} from 'redux-form'
 
 import {Banner, Spinner, CreateGroupForm} from '../../components'
 
@@ -17,13 +18,19 @@ import {
 import styles from './alexa.scss'
 
 class Alexa extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.handleCreateGroupSubmit = this.handleCreateGroupSubmit.bind(this);
     }
 
     componentWillMount() {
         this.props.loadAlexaGroupsSaga();
+    }
+
+    componentWillUpdate(props) {
+        const updateGroups = this.props.createGroupSubmitSucceeded || this.props.joinGroupSubmitSucceeded;
+        if (updateGroups)
+            props.loadAlexaGroupsSaga();
     }
 
     handleCreateGroupSubmit(values) {
@@ -59,6 +66,7 @@ class Alexa extends Component {
         const isFetching = alexaGroups.isFetching;
         const responseCode = alexaGroups.responseCode;
         const showCreateGroupModal = this.props.createGroupModal.show;
+
         return (
             <div>
                 <Modal show={showCreateGroupModal} onHide={this.props.hideGroupCreateModal} backdrop="static">
@@ -66,7 +74,7 @@ class Alexa extends Component {
                         <Modal.Title>Create a Team!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <CreateGroupForm submitForm={this.handleCreateGroupSubmit}/>
+                            <CreateGroupForm/>
                     </Modal.Body>
                 </Modal>
                 <Banner
@@ -76,7 +84,8 @@ class Alexa extends Component {
                 />
                 <section className={'container ' + styles.mainWrapper}>
                     <div className={styles.mainBar}>
-                        <Button className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>Create a Team</Button>
+                        <Button className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>Create a
+                            Team</Button>
                     </div>
                     {isFetching ? <Spinner/> :
                         <ul className={styles.groupsList}>
@@ -93,7 +102,11 @@ class Alexa extends Component {
 }
 
 function mapStateToProps(state) {
-    return {...state.alexa}
+    return {
+        ...state.alexa,
+        createGroupSubmitSucceeded: hasSubmitSucceeded('createGroupForm')(state),
+        joinGroupSubmitSucceeded: hasSubmitSucceeded('joinGroupForm')(state)
+    }
 }
 
 function mapDispatchToProps(dispatch) {

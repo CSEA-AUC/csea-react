@@ -45,7 +45,7 @@ function createGroupReducers(state = initialState, action) {
         case types.SHOW_GROUP_CREATE_MODAL:
             return {...state, show: true};
         case types.HIDE_GROUP_CREATE_MODAL:
-            return {...state, show: false};
+            return {...state, show: false, isPosting: false, responseCode: null};
         case types.CREATE_ALEXAGROUP.REQUEST:
             return {...state, isPosting: true, responseCode: null};
         case types.CREATE_ALEXAGROUP.SUCCESS:
@@ -60,7 +60,7 @@ function joinGroupReducer(state = initialState, action) {
         case types.SHOW_GROUP_JOIN_MODAL:
             return {...state, show: true};
         case types.HIDE_GROUP_JOIN_MODAL:
-            return {...state, show: false};
+            return {...state, show: false, isPosting: false, responseCode: null};
         case types.JOIN_ALEXAGROUP.REQUEST:
             return {...state, isPosting: true, responseCode: null};
         case types.JOIN_ALEXAGROUP.SUCCESS:
