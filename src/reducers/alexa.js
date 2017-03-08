@@ -5,6 +5,7 @@ const initialState = {
         show: false,
         isPosting: false,
         responseCode: null,
+        groupId: null,
     },
     createGroupModal: {
         show: false,
@@ -31,6 +32,7 @@ function alexa(state = initialState, action) {
         case types.JOIN_ALEXAGROUP.REQUEST:
         case types.JOIN_ALEXAGROUP.SUCCESS:
         case types.JOIN_ALEXAGROUP.FAILURE:
+        case types.SET_GROUP_JOIN_ID:
             return {...state, joinGroupModal: joinGroupReducer(state.joinGroupModal, action)};
         case types.LOAD_ALEXAGROUPS.REQUEST:
         case types.LOAD_ALEXAGROUPS.SUCCESS:
@@ -67,6 +69,8 @@ function joinGroupReducer(state = initialState, action) {
             return {...state, isPosting: false, responseCode: action.responseCode};
         case types.JOIN_ALEXAGROUP.FAILURE:
             return {...state, isPosting: false, responseCode: action.errorCode};
+        case types.SET_GROUP_JOIN_ID:
+            return {...state, groupId: action.id}
     }
 }
 

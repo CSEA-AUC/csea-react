@@ -4,7 +4,7 @@ import {Field, reduxForm, formValueSelector} from 'redux-form';
 import {Button} from 'react-bootstrap'
 import {required, aucEmail, maxLength50, minLength3, maxLength200, mobileNumber} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
-import submitCreateGroupForm from '../../../utils/form-submissions'
+import {submitCreateGroupForm} from '../../../utils/form-submissions'
 
 class CreateGroupForm extends Component {
     render() {

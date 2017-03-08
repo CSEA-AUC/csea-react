@@ -9,13 +9,24 @@ export default class About extends Component {
             <div>
                 <Banner
                     title="About us"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                    subtitle="Our goals and vision."
                 />
                 <section className={styles.mainWrapper + ' container'}>
                     <h1>Our Mission</h1>
                     <div className={styles.missionContent}>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut.</p>
+                        <p>
+                            Our vision for the association is to represent the computer
+                            science and engineering students at the American University in Cairo.
+                        </p>
+
+                        <p>Our main objective is facilitating communication between departments and students and the
+                            outer
+                            world as well.
+                        </p>
+                        <p>
+                            We aim at providing a long lasting stable organization that would put this vision into
+                            action.
+                        </p>
                     </div>
                 </section>
             </div>

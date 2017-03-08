@@ -41,6 +41,9 @@ export const hideGroupCreateModal = () => action(HIDE_GROUP_CREATE_MODAL);
 export const HIDE_GROUP_JOIN_MODAL = 'HIDE_GROUP_JOIN_MODAL';
 export const hideGroupJoinModal = () => action(HIDE_GROUP_JOIN_MODAL);
 
+export const SET_GROUP_JOIN_ID = 'SET_GROUP_JOIN_ID';
+export const setGroupJoinId = (id) => action(SET_GROUP_JOIN_ID, {id});
+
 // Saga actions
 export const LOAD_ALEXAGROUPS_SAGA = 'LOAD_ALEXAGROUPS_SAGA';
 export const loadAlexaGroupsSaga = () => action(LOAD_ALEXAGROUPS_SAGA);

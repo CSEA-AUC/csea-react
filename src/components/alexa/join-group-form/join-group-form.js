@@ -3,7 +3,7 @@ import {Field, reduxForm} from 'redux-form';
 import {Button} from 'react-bootstrap'
 import {required, aucEmail, maxLength50, minLength3, mobileNumber} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
-import submitJoinGroupForm from '../../../utils/form-submissions'
+import {submitJoinGroupForm} from '../../../utils/form-submissions'
 
 class JoinGroupForm extends Component {
     render() {

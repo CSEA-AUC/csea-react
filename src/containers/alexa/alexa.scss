@@ -9,13 +9,37 @@
   background: $base-white;
   padding: 5px 20px;
   box-shadow: $global-box-shadow;
+  img {
+    margin: 15px auto;
+  }
   .mainBar {
-    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-top: 15px;
     border-bottom: 1px solid rgba($base-black, .2);
     margin-bottom: 15px;
     .createGroupButton {
       border-radius: 0;
+      align-self: center;
+      flex-grow: 1;
+      font-weight: 500;
+      color: $base-white;
+      border: 3px solid darken(#ff9900, 3%);
+      background-color: darken(#ff9900, 3%);
+      box-shadow: $global-box-shadow;
+      &:hover, &:focus {
+        background-color: darken(#ff9900, 7%);
+        border: 3px solid darken(#ff9900, 7%);
+        color: $base-white;
+      }
+    }
+    .note {
+      flex-grow: 2;
+      font-style: italic;
+      font-size: 15px;
+      font-weight: 300;
+      padding: 30px;
     }
     h4 {
       font-weight: 300;
@@ -47,11 +71,22 @@
       float: right;
       clear: both;
       border-radius: 0;
+      font-weight: 500;
+      color: $base-white;
+      border: 3px solid darken(#ff9900, 3%);
+      background-color: darken(#ff9900, 3%);
+      box-shadow: $global-box-shadow;
+      &:hover, &:focus {
+        background-color: darken(#ff9900, 7%);
+        border: 3px solid darken(#ff9900, 7%);
+        color: $base-white;
+      }
       @media (max-width: 767px) {
         display: block;
         margin-top: 10px;
         float: none;
         clear: none;
+        padding: 6px;
       }
     }
   }

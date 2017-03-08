@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {ControlLabel, FormControl, Form, Button, Modal, Image} from 'react-bootstrap'
 import {hasSubmitSucceeded} from 'redux-form'
 
-import {Banner, Spinner, CreateGroupForm, Jo} from '../../components'
+import {Banner, Spinner, CreateGroupForm, JoinGroupForm} from '../../components'
 
 import {
     loadAlexaGroupsSaga,
@@ -12,12 +12,20 @@ import {
     showGroupCreateModal,
     showGroupJoinModal,
     hideGroupCreateModal,
-    hideGroupJoinModal
+    hideGroupJoinModal,
+    setGroupJoinId
 } from '../../actions/alexa'
 
 import styles from './alexa.scss'
+import alexaimg from './alexacover.jpg'
 
 class Alexa extends Component {
+    constructor(props) {
+        super(props);
+        this.handleJoinGroupButtonClicked = this.handleJoinGroupButtonClicked.bind(this);
+        this.createAlexaGroup = this.createAlexaGroup.bind(this);
+    }
+
     componentWillMount() {
         this.props.loadAlexaGroupsSaga();
     }
@@ -28,12 +36,19 @@ class Alexa extends Component {
             props.loadAlexaGroupsSaga();
     }
 
+    handleJoinGroupButtonClicked(id) {
+        this.props.setGroupJoinId(id);
+        this.props.showGroupJoinModal();
+    }
+
     createAlexaGroup(group) {
+        const onClickCallback = this.handleJoinGroupButtonClicked;
         return (
             <section key={group.id} className={styles.groupWrapper}>
                 <header>
                     <h2 className={styles.ideaTitle}>{group.idea_title}</h2>
-                    <Button className={styles.joinGroupButton} disabled={group.members.length >= 4}>
+                    <Button className={styles.joinGroupButton} disabled={group.members.length >= 5}
+                            onClick={() => onClickCallback(group.id)}>
                         {group.members.length >= 5 ? 'Team is Full' : 'Join Team'}
                     </Button>
                 </header>
@@ -41,7 +56,6 @@ class Alexa extends Component {
                 <div className={styles.groupMembersWrapper}>
                     <h4>Team Members ({group.members.length}/5)</h4>
                     <ul>
-                        {/*<li className={styles.groupMember}>{group.inventor_name}</li>*/}
                         {group.members.map((member) => {
                             return (<li key={member.id} className={styles.groupMember}>{member.name}</li>)
                         })
@@ -75,20 +89,25 @@ class Alexa extends Component {
                         <Modal.Title>Join a Team!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <CreateGroupForm/>
+                        <JoinGroupForm/>
                     </Modal.Body>
                 </Modal>
 
                 <Banner
                     title="Amazon Alexa Hackaton Registration"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                    subtitle="Unleash Your Inner Developer!"
                     className={styles.banner}
                 />
                 <section className={'container ' + styles.mainWrapper}>
+                    <Image src={alexaimg} responsive/>
                     <div className={styles.mainBar}>
-                        <Button className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>
+                        <Button bsSize="large" className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>
                             Create a Team
                         </Button>
+                        <div className={styles.note}>
+                            Note: Once you form or join a group, you are bound to it. If you would like to remove yourself
+                            from a group, please forward us your request at <a href="mailto:csea@aucegypt.edu">csea@aucegypt.edu</a>
+                        </div>
                     </div>
                     {isFetching ? <Spinner/> :
                         <ul className={styles.groupsList}>
@@ -127,7 +146,9 @@ function mapDispatchToProps(dispatch) {
         hideGroupCreateModal: () =>
             dispatch(hideGroupCreateModal()),
         hideGroupJoinModal: () =>
-            dispatch(hideGroupJoinModal())
+            dispatch(hideGroupJoinModal()),
+        setGroupJoinId: (id) =>
+            dispatch(setGroupJoinId(id))
     }
 }
 
