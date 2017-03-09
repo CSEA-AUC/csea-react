@@ -92,6 +92,7 @@
   }
   p {
     font-weight: 300;
+    word-wrap: break-word;
   }
   .groupMembersWrapper {
     text-align: center;
@@ -123,8 +124,4 @@
     margin: 0 auto;
     padding: 20px;
   }
-}
-
-.formError {
-
 }

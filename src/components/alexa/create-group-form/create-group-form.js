@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import {Field, reduxForm, formValueSelector} from 'redux-form';
 import {Button} from 'react-bootstrap'
-import {required, aucEmail, maxLength50, minLength3, maxLength200, mobileNumber} from '../../../utils/validators'
+import {required, aucEmail, maxLength50, minLength3, maxLength500, mobileNumber} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
 import {submitCreateGroupForm} from '../../../utils/form-submissions'
 
@@ -43,8 +43,8 @@ class CreateGroupForm extends Component {
                 </div>
                 <div>
                     <Field name="idea_description" component={FormInput} label="Idea Description" componentClass="textarea"
-                           validate={[required, maxLength200, minLength3]}/>
-                    {ideaDescriptionValue && <small style={{float:'right', clear: 'both', display: 'inline-block'}}>{ideaDescriptionValue.length}/200</small>}
+                           validate={[required, maxLength500, minLength3]}/>
+                    {ideaDescriptionValue && <small style={{float:'right', clear: 'both', display: 'inline-block'}}>{ideaDescriptionValue.length}/500</small>}
                 </div>
                 <div>
                     <Button type="submit" bsStyle="primary" disabled={submitting || !valid}> {submitting ? 'Submitting...' : 'Submit'}</Button>
