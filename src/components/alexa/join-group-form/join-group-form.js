@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {Button} from 'react-bootstrap'
-import {required, aucEmail, maxLength50, minLength3, mobileNumber} from '../../../utils/validators'
+import {required, aucEmail, maxLength50, minLength3, mobileNumber, universityId} from '../../../utils/validators'
 import {AUCEmailInput, FormInput} from '../../index'
 import {submitJoinGroupForm} from '../../../utils/form-submissions'
 
@@ -13,6 +13,10 @@ class JoinGroupForm extends Component {
                 <div>
                     <Field name="name" component={FormInput} label="Full Name"
                            validate={[required, maxLength50, minLength3]}/>
+                </div>
+                <div>
+                    <Field name="auc_id" component={FormInput} label="AUC ID"
+                           validate={[required, universityId]}/>
                 </div>
                 <div>
                     <Field name="email" component={AUCEmailInput} label="AUC Email"
@@ -34,6 +38,8 @@ class JoinGroupForm extends Component {
                         <option value="SO">Sophomore</option>
                         <option value="JR">Junior</option>
                         <option value="SR">Senior</option>
+                        <option value="TA">Teaching Assistant</option>
+                        <option value="AL">Alumni</option>
                     </Field>
                 </div>
                 <div>

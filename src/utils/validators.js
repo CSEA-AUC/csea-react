@@ -22,3 +22,5 @@ export const aucEmail = value =>
 export const mobileNumber = number =>
     number && !/^\+?1?\d{9,11}$/i.test(number) ? 'Mobile number must be 9 to 11 digits long' : undefined;
 
+export const universityId = id =>
+    id && !/^\d{9}$/i.test(id) ? 'AUC ID must be 9 digits long.' : undefined;
