@@ -12,7 +12,7 @@ class Announcements extends Component {
             <div>
                 <Banner
                     title="Announcements"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                    subtitle="All the latest CSEA related news."
                     className={styles.banner}
                 />
                 <section className={styles.mainWrapper}>

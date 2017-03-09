@@ -13,7 +13,7 @@ export default class Team extends Component {
             <div>
                 <Banner
                     title="The Team"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                    subtitle="The people behind CSEA."
                 />
                 <section className={styles.mainWrapper + ' container'}>
                     <h1>CSEA '16 - '17</h1>

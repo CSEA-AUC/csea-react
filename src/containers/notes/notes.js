@@ -83,7 +83,7 @@ class Notes extends Component {
             <div>
                 <Banner
                     title="Notes"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut."
+                    subtitle="A collection of notes for all CSCE related courses."
                     className={styles.banner}
                 />
                 <section className={'container ' + styles.mainWrapper}>
