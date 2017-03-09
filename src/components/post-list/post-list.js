@@ -30,7 +30,7 @@ export default class PostList extends Component {
                     <span className={styles.postAuthor}><UserIcon/>{post.author}</span>
                     <span className={styles.postDate}><CalendarIcon/>{timestamp}</span>
                     <span className={styles.postCommentCount}><CommentsIcon/>{post.comment_count + ' Comments'}</span>
-                    <span className={styles.postContinueReading}>Continue Reading<RightAngleIcon/></span>
+                    <Link to={'/announcements/' + post.slug} className={styles.postContinueReading}>Continue Reading<RightAngleIcon/></Link>
                 </footer>
             </article>
         )

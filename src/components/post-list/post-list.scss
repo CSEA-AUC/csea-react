@@ -77,6 +77,13 @@
     .postContinueReading {
       margin-left: auto;
       margin-right: 0;
+      transition: all 0.15s ease-in-out;
+      color: $base-white;
+      &:hover, &:focus {
+        transform: translateX(5px);
+        color: $base-white;
+        border: none;
+      }
     }
   }
 }
