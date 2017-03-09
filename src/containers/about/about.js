@@ -12,6 +12,14 @@ export default class About extends Component {
                     subtitle="Our goals and vision."
                 />
                 <section className={styles.mainWrapper + ' container'}>
+                    <h1>About</h1>
+                    <div className={styles.missionContent}>
+                        <p>
+                            The Computer Science and Engineering Association is a multipurpose student organization at
+                            the American University in Cairo, that unites students of the Computer Science and
+                            Engineering Department and strives to achieve their interests in all various forms
+                        </p>
+                    </div>
                     <h1>Our Mission</h1>
                     <div className={styles.missionContent}>
                         <p>
