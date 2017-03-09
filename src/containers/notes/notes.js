@@ -57,9 +57,11 @@ class Notes extends Component {
                         </div>
                     </div>
                 </header>
-                <section className={styles.noteComment}>
-                    {note.note_comment}
-                </section>
+                {note.note_comment ? <section className={styles.noteComment}>
+                        {note.note_comment}
+                    </section> : <section className={styles.noNoteComment}>
+                        <div>No description was found.</div>
+                    </section>}
                 <footer>
                     <div className={styles.noteMeta}>
                         <div className={styles.noteAuthor}><UserIcon/>{note.author}</div>

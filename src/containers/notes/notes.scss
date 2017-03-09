@@ -105,6 +105,17 @@
       flex-grow: 1;
     }
 
+    .noNoteComment {
+      position: relative;
+      font-family: 'Quattrocento', serif;
+      margin-top: 5px;
+      flex-grow: 1;
+      text-align: center;
+      & > * {
+        position: relative;
+      }
+    }
+
     footer{
       display: flex;
       font-size: 16px;
