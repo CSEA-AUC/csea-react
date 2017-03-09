@@ -21,15 +21,15 @@ export default class Team extends Component {
                         <MemberCard name="Sherif 'Gedo' Sorour" position="CSEA President" imageUrl={img}/>
                         <MemberCard name="Amr Saeid" position="CSEA Vice President" imageUrl={img}/>
                     </div>
-                    <div className={styles.heads}>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                        <MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>
-                    </div>
+                    {/*<div className={styles.heads}>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                        {/*<MemberCard name="Aliaa Amin" position="HR Head" imageUrl={img}/>*/}
+                    {/*</div>*/}
                 </section>
             </div>
         )
