@@ -47,7 +47,7 @@ class Alexa extends Component {
             <section key={group.id} className={styles.groupWrapper}>
                 <header>
                     <h2 className={styles.ideaTitle}>{group.idea_title}</h2>
-                    <Button className={styles.joinGroupButton} disabled={group.members.length >= 5}
+                    <Button className={styles.joinGroupButton} disabled={true}
                             onClick={() => onClickCallback(group.id)}>
                         {group.members.length >= 5 ? 'Team is Full' : 'Join Team'}
                     </Button>
@@ -101,12 +101,11 @@ class Alexa extends Component {
                 <section className={'container ' + styles.mainWrapper}>
                     <Image src={alexaimg} responsive/>
                     <div className={styles.mainBar}>
-                        <Button bsSize="large" className={styles.createGroupButton} onClick={this.props.showGroupCreateModal}>
+                        <Button bsSize="large" className={styles.createGroupButton} onClick={this.props.showGroupCreateModal} disabled={true}>
                             Create a Team
                         </Button>
                         <div className={styles.note}>
-                            Note: Once you form or join a group, you are bound to it. If you would like to remove yourself
-                            from a group, please forward us your request at <a href="mailto:csea@aucegypt.edu">csea@aucegypt.edu</a>
+                            Registration has closed. Best of luck in the hackathon!
                         </div>
                     </div>
                     {isFetching ? <Spinner/> :
